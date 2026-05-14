@@ -66,7 +66,7 @@ export default function Hero() {
         </div>
 
         {/* Phone overlapping — top half sits on the card, bottom half extends below */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[40%]">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[25%]">
           <Image
             src="/images/hero-device.png"
             alt="Bluto app on mobile"
@@ -81,7 +81,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Spacer for the phone extending below the card */}
-      <div className="h-[120px] md:h-[160px] lg:h-[200px]" />
+      <div className="h-[80px] md:h-[100px] lg:h-[120px]" />
     </section>
   );
 }
