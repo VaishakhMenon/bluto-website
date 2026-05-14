@@ -46,43 +46,42 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Device with background card */}
+      {/* Device with background card — full width aligned with navbar */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="max-w-3xl mx-auto mt-16 relative"
+        className="max-w-7xl mx-auto mt-16 px-6 md:px-10 relative"
       >
-        {/* Background image card */}
-        <div className="rounded-3xl overflow-hidden shadow-lg">
+        {/* Background image card — full width, shorter height */}
+        <div className="rounded-2xl md:rounded-3xl overflow-hidden relative h-[280px] md:h-[400px] lg:h-[480px]">
           <Image
             src="/images/hero-device-image-backgound-card.jpg"
             alt=""
-            width={1200}
-            height={600}
-            className="w-full h-auto object-cover"
+            fill
+            className="object-cover"
             priority
             quality={90}
           />
         </div>
 
-        {/* Phone floating on top */}
-        <div className="absolute left-1/2 -translate-x-1/2 -bottom-12 md:-bottom-16 drop-shadow-2xl">
+        {/* Phone overlapping — top half sits on the card, bottom half extends below */}
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[40%]">
           <Image
             src="/images/hero-device.png"
             alt="Bluto app on mobile"
-            width={500}
-            height={625}
-            className="w-[200px] md:w-[260px] h-auto"
+            width={600}
+            height={750}
+            className="w-[220px] md:w-[280px] lg:w-[320px] h-auto"
             priority
             quality={90}
-            style={{ filter: "drop-shadow(0 25px 50px rgba(0,0,0,0.25))" }}
+            style={{ filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.3))" }}
           />
         </div>
       </motion.div>
 
-      {/* Spacer for the overflowing phone */}
-      <div className="h-16 md:h-20" />
+      {/* Spacer for the phone extending below the card */}
+      <div className="h-[120px] md:h-[160px] lg:h-[200px]" />
     </section>
   );
 }
