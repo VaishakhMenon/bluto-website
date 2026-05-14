@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -45,59 +46,22 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Phone mockup */}
+      {/* Device image */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="max-w-sm mx-auto mt-16"
+        className="max-w-md mx-auto mt-16"
       >
-        <div className="w-[280px] md:w-[320px] mx-auto rounded-[2.5rem] border-2 border-card-border bg-white overflow-hidden shadow-2xl relative">
-          {/* Notch */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-cream rounded-b-2xl z-10" />
-
-          {/* Screen content */}
-          <div className="pt-10 pb-6 px-5 space-y-3 min-h-[420px]">
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-full bg-cream flex items-center justify-center">
-                <span className="text-foreground text-xs font-bold">B</span>
-              </div>
-              <div>
-                <div className="text-sm font-semibold text-foreground">Bluto</div>
-                <div className="text-[10px] text-muted">Online</div>
-              </div>
-            </div>
-
-            <div className="bg-cream rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%]">
-              <p className="text-[12px] text-foreground leading-relaxed">
-                Good morning! You crushed that 5-day streak. Ready to plan today&apos;s workout?
-              </p>
-            </div>
-            <div className="bg-foreground rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[75%] ml-auto">
-              <p className="text-[12px] text-background leading-relaxed">
-                Let&apos;s go! Upper body today
-              </p>
-            </div>
-            <div className="bg-cream rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%]">
-              <p className="text-[12px] text-foreground leading-relaxed">
-                On it. I&apos;ll build on last week&apos;s gains. Here&apos;s your plan:
-              </p>
-            </div>
-            <div className="bg-cream rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[90%]">
-              <p className="text-[11px] text-foreground leading-relaxed font-medium">
-                Bench Press 4x8 @ 80kg<br/>
-                OHP 3x10 @ 40kg<br/>
-                Cable Flyes 3x12<br/>
-                Lateral Raises 4x15
-              </p>
-            </div>
-            <div className="bg-foreground rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[60%] ml-auto">
-              <p className="text-[12px] text-background leading-relaxed">
-                Perfect, let&apos;s crush it
-              </p>
-            </div>
-          </div>
-        </div>
+        <Image
+          src="/images/hero-device.png"
+          alt="Bluto app on mobile"
+          width={800}
+          height={1000}
+          className="w-full h-auto"
+          priority
+          quality={90}
+        />
       </motion.div>
     </section>
   );
