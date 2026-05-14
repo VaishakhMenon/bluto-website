@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -28,6 +29,17 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Bottom block image */}
+      <div className="w-full">
+        <Image
+          src="/images/Footer-bottom-block.png"
+          alt="Bluto"
+          width={1920}
+          height={400}
+          className="w-full h-auto"
+          quality={90}
+        />
+      </div>
     </footer>
   );
 }
