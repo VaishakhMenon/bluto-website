@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -28,13 +29,16 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Large brand name */}
-      <div className="border-t border-card-border bg-cream overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
-          <p className="text-6xl md:text-8xl lg:text-9xl font-medium text-foreground/10 tracking-tight leading-none select-none">
-            Bluto
-          </p>
-        </div>
+      {/* Bottom block image */}
+      <div className="w-full">
+        <Image
+          src="/images/Footer-bottom-block.png"
+          alt="Bluto"
+          width={1920}
+          height={400}
+          className="w-full h-auto"
+          quality={90}
+        />
       </div>
     </footer>
   );
