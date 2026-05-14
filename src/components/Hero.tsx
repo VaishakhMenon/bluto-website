@@ -53,8 +53,8 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.6 }}
         className="max-w-7xl mx-auto mt-16 px-6 md:px-10 relative"
       >
-        {/* Background image card — full width, shorter height */}
-        <div className="rounded-2xl md:rounded-3xl overflow-hidden relative h-[280px] md:h-[400px] lg:h-[480px]">
+        {/* Background image card */}
+        <div className="rounded-2xl md:rounded-3xl overflow-hidden relative h-[340px] md:h-[480px] lg:h-[560px]">
           <Image
             src="/images/hero-device-image-backgound-card.jpg"
             alt=""
@@ -75,7 +75,7 @@ export default function Hero() {
             className="w-[220px] md:w-[280px] lg:w-[320px] h-auto"
             priority
             quality={90}
-            style={{ filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.3))" }}
+            style={{ filter: "drop-shadow(0 20px 40px rgba(26,58,42,0.12))" }}
           />
         </div>
       </motion.div>
