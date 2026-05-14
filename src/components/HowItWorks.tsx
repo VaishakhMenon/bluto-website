@@ -5,18 +5,18 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Download & sign up",
-    description: "Create your account in seconds. Tell Bluto your name, your interests, and pick your companion voice.",
+    title: "Pick your voice. Set your vibe.",
+    description: "Sign up in seconds. Choose from 8 companion voices across 5 languages. Tell Bluto what you care about and how you like to communicate.",
   },
   {
     number: "02",
-    title: "Start talking",
-    description: "Chat or call — Bluto adapts to your style. Ask anything, share anything, get help with everything.",
+    title: "Start a conversation that actually goes somewhere",
+    description: "Chat by text or call by voice. Ask for workout plans, meal ideas, life advice, or just talk about your day. Bluto adapts to you, not the other way around.",
   },
   {
     number: "03",
-    title: "Watch it grow",
-    description: "The more you interact, the more Bluto understands you. It remembers, learns, and gets better over time.",
+    title: "It gets better every single day",
+    description: "Bluto remembers your preferences, your goals, and your history. The more you use it, the more personal and useful it becomes. Like a best friend with perfect memory.",
   },
 ];
 
@@ -33,8 +33,8 @@ export default function HowItWorks() {
           className="text-center mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight">
-            Simple to start.{" "}
-            <span className="serif-italic">Impossible to put down.</span>
+            Up and running{" "}
+            <span className="serif-italic">in 60 seconds.</span>
           </h2>
         </motion.div>
 

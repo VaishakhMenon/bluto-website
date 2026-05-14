@@ -42,8 +42,8 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] mb-6 text-white drop-shadow-lg max-w-4xl"
           >
-            Navigate everyday life with{" "}
-            <span className="serif-italic">a companion that remembers</span>
+            The AI that actually{" "}
+            <span className="serif-italic">knows you</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -53,8 +53,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-base md:text-lg text-white/85 max-w-xl mx-auto mb-10 leading-relaxed drop-shadow-md"
           >
-            Bluto is your personal AI companion — always curious, kind, and ready
-            to help you think, plan, and grow.
+            Bluto remembers your story, tracks your goals, and helps you think
+            clearly. One companion for your workouts, your meals, your tasks,
+            and the moments when you just need to talk.
           </motion.p>
 
           {/* CTAs */}
@@ -68,13 +69,13 @@ export default function Hero() {
               href="#features"
               className="px-8 py-3.5 rounded-full border border-white/40 text-white hover:bg-white/10 transition-all font-medium text-sm backdrop-blur-[2px]"
             >
-              See what Bluto can do
+              See what's possible
             </a>
             <a
               href="#download"
               className="px-8 py-3.5 rounded-full bg-white text-foreground hover:bg-white/90 transition-colors font-medium text-sm shadow-lg"
             >
-              Get Bluto
+              Try it free
             </a>
           </motion.div>
         </div>

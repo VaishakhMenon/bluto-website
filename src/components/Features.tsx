@@ -6,66 +6,66 @@ import { motion } from "framer-motion";
 const features = [
   {
     emoji: "💬",
-    title: "Untangle",
-    titleAccent: "your thoughts",
+    title: "Your midnight",
+    titleAccent: "sounding board",
     description:
-      "Process what's on your mind with a patient, non-judgmental companion who actually remembers your story.",
+      "3 AM thoughts? Big life decisions? Just need to vent? Bluto listens without judgment and actually remembers what you said last time.",
     image: "/images/features/thoughts.png",
   },
   {
     emoji: "📋",
-    title: "Get things",
-    titleAccent: "done",
+    title: "Never forget",
+    titleAccent: "what matters",
     description:
-      "Set reminders, track habits, and manage your daily tasks. Bluto keeps track so you don't have to.",
+      "Tasks, habits, reminders, daily streaks. Tell Bluto what you need to do and it holds you accountable. No more things slipping through the cracks.",
     image: "/images/features/productivity.png",
   },
   {
     emoji: "🔮",
-    title: "Astro",
-    titleAccent: "universe",
+    title: "Your daily",
+    titleAccent: "cosmic check-in",
     description:
-      "Daily horoscopes, zodiac compatibility, and cosmic insights — your stars, your way. Just for fun.",
+      "Horoscopes, zodiac compatibility, birth chart insights. Whether you live by the stars or just think it's fun, Bluto has your sign covered.",
     image: "/images/features/astrology.png",
   },
   {
     emoji: "🎙️",
-    title: "Talk it out",
-    titleAccent: "live",
+    title: "Just talk.",
+    titleAccent: "Out loud.",
     description:
-      "Commute, walk, or prep out loud — Bluto's voice mode goes wherever you go.",
+      "On your commute, during a walk, while you cook. Bluto's voice mode turns any moment into a real conversation. Hands free, judgment free.",
     image: "/images/features/voice.png",
   },
   {
     emoji: "🥗",
-    title: "Eat",
-    titleAccent: "smarter",
+    title: "Meals that fit",
+    titleAccent: "your life",
     description:
-      "Get personalized meal ideas, nutrition tips, and dietary guidance tailored to your goals.",
+      "Not generic diet plans. Bluto learns what you actually eat, respects your culture and preferences, and suggests meals you'll want to make.",
     image: "/images/features/nutrition.png",
   },
   {
     emoji: "💪",
-    title: "Stay",
-    titleAccent: "active",
+    title: "A gym partner",
+    titleAccent: "who shows up",
     description:
-      "Workout plans, exercise tracking, and a full exercise library — your personal fitness companion.",
+      "AI-powered workout plans, exercise tracking, PR celebrations, and progressive overload hints. Bluto spots your gains before you do.",
     image: "/images/features/fitness.png",
   },
   {
     emoji: "🔖",
-    title: "Bookmark",
-    titleAccent: "links",
+    title: "Save it now.",
+    titleAccent: "Read it later.",
     description:
-      "Save links and Bluto will remind you later. Never lose track of that article or recipe again.",
+      "Found a great article at the wrong time? Save the link with your voice and Bluto keeps it organized until you're ready.",
     image: "/images/features/bookmarks.png",
   },
   {
     emoji: "💳",
-    title: "Subscription",
-    titleAccent: "tracker",
+    title: "Know where",
+    titleAccent: "your money goes",
     description:
-      "Keep tabs on all your subscriptions in one place. Know exactly where your money goes each month.",
+      "Track every subscription in one place. See your monthly spend at a glance. No more surprise charges from apps you forgot about.",
     image: "/images/features/subscriptions.png",
   },
 ];
@@ -95,12 +95,13 @@ export default function Features() {
           className="text-center mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight">
-            Ask Bluto anything.{" "}
-            <span className="serif-italic">Talk about everything.</span>
+            One companion.{" "}
+            <span className="serif-italic">Every part of your day.</span>
           </h2>
-          <p className="text-muted text-base md:text-lg max-w-lg mx-auto mt-4 leading-relaxed">
-            Bluto is always curious, kind, and ready to help you think,
-            plan, and grow.
+          <p className="text-muted text-base md:text-lg max-w-xl mx-auto mt-4 leading-relaxed">
+            Most AI apps do one thing. Bluto handles your fitness, nutrition,
+            productivity, mental wellness, and more. All in one place,
+            all personalized to you.
           </p>
         </motion.div>
 

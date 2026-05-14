@@ -5,18 +5,18 @@ import { motion } from "framer-motion";
 const items = [
   {
     icon: "🔒",
-    title: "Your data is yours",
-    description: "We never sell your personal data. Conversations are encrypted and you can delete everything anytime.",
+    title: "Your conversations stay private",
+    description: "We never sell your data. Period. Every conversation is encrypted and you can wipe everything with one tap whenever you want.",
   },
   {
     icon: "⚕️",
-    title: "AI with clear boundaries",
-    description: "Bluto is for entertainment and productivity — not a substitute for medical, nutritional, or mental health professionals.",
+    title: "Smart AI, honest boundaries",
+    description: "Bluto helps you think, plan, and stay on track. For medical, nutritional, or mental health decisions, it always recommends consulting a professional.",
   },
   {
     icon: "👁️",
-    title: "Transparent practices",
-    description: "Read our full Privacy Policy and Terms of Service anytime. We believe in clear, honest communication.",
+    title: "No hidden fine print",
+    description: "Our Privacy Policy and Terms of Service are written in plain language. No surprises, no buried clauses. You deserve to know exactly how things work.",
   },
 ];
 
@@ -33,10 +33,11 @@ export default function Trust() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight">
-            Built on <span className="serif-italic">trust</span>
+            Your trust is{" "}
+            <span className="serif-italic">non-negotiable.</span>
           </h2>
           <p className="text-muted text-base md:text-lg max-w-xl mx-auto mt-4 leading-relaxed">
-            We take your privacy and safety seriously.
+            You share real things with Bluto. We protect every word like it matters. Because it does.
           </p>
         </motion.div>
 
@@ -69,12 +70,12 @@ export default function Trust() {
           <div className="flex items-start gap-3">
             <span className="text-amber-600 text-lg flex-shrink-0">⚠️</span>
             <div>
-              <h4 className="font-semibold text-foreground mb-1 text-sm">Important Disclaimer</h4>
+              <h4 className="font-semibold text-foreground mb-1 text-sm">A quick note</h4>
               <p className="text-sm text-muted leading-relaxed">
-                Bluto provides AI-generated responses for informational and entertainment purposes only.
-                It is not a licensed professional and should never be used as a substitute for qualified
-                medical, nutritional, therapeutic, financial, or legal advice. Always consult appropriate
-                professionals for health, dietary, and mental wellness decisions.
+                Bluto is an AI companion built for productivity, wellness tracking, and everyday conversation.
+                It is not a licensed professional and should not replace qualified medical, nutritional,
+                therapeutic, financial, or legal advice. For important health and wellness decisions,
+                always consult the right professionals.
               </p>
             </div>
           </div>

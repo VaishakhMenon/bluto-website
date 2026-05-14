@@ -16,14 +16,14 @@ export default function Download() {
           {/* Text side */}
           <div className="flex-1">
             <h2 className="text-3xl md:text-4xl font-medium text-foreground leading-tight mb-2">
-              Talk it out{" "}
-              <span className="serif-italic">with voice</span>
+              Ready to meet{" "}
+              <span className="serif-italic">your new favorite</span>
               <br />
-              on your favorite device
+              conversation partner?
             </h2>
             <p className="text-muted text-sm leading-relaxed mt-4 mb-8">
-              Download Bluto for free and start your first conversation today.
-              200 credits on us to get you started.
+              Download Bluto for free. You get 200 credits to explore everything.
+              No credit card, no commitment. Just start talking.
             </p>
 
             {/* Store buttons */}
@@ -78,17 +78,17 @@ export default function Download() {
 
                 <div className="bg-cream rounded-2xl rounded-tl-sm px-3 py-2 max-w-[85%]">
                   <p className="text-[11px] text-foreground leading-relaxed">
-                    Hey! How was your morning workout? Did you try that new routine? 💪
+                    Good morning! You crushed that 5-day streak. Ready to plan today&apos;s workout? 💪
                   </p>
                 </div>
                 <div className="bg-foreground rounded-2xl rounded-tr-sm px-3 py-2 max-w-[80%] ml-auto">
                   <p className="text-[11px] text-background leading-relaxed">
-                    Yes! It was tough but felt great
+                    Let&apos;s go! Upper body today 🔥
                   </p>
                 </div>
                 <div className="bg-cream rounded-2xl rounded-tl-sm px-3 py-2 max-w-[85%]">
                   <p className="text-[11px] text-foreground leading-relaxed">
-                    That&apos;s awesome! You&apos;re on a 5-day streak now 🔥
+                    On it. I&apos;ll build on last week&apos;s gains. Here&apos;s your plan 📋
                   </p>
                 </div>
               </div>

@@ -20,22 +20,22 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Bluto — Your AI Companion",
+  title: "Bluto | The AI That Actually Knows You",
   description:
-    "Bluto is your personal AI companion that listens, remembers, and helps you navigate life — from daily motivation to nutrition, fitness, and beyond.",
+    "Bluto remembers your story, tracks your goals, and helps you think clearly. Chat, call, work out, eat better, and stay organized with one AI companion that gets smarter every day.",
   openGraph: {
-    title: "Bluto — Your AI Companion",
+    title: "Bluto | The AI That Actually Knows You",
     description:
-      "An AI that actually knows you. Chat, get advice, track goals — all with a companion that remembers.",
+      "One companion for your whole life. Bluto remembers your story, tracks your workouts, plans your meals, and helps you think clearly. Try it free.",
     url: "https://bluto.co",
     siteName: "Bluto",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bluto — Your AI Companion",
+    title: "Bluto | The AI That Actually Knows You",
     description:
-      "An AI that actually knows you. Chat, get advice, track goals — all with a companion that remembers.",
+      "One companion for your whole life. Bluto remembers your story, tracks your workouts, plans your meals, and helps you think clearly. Try it free.",
   },
 };
 

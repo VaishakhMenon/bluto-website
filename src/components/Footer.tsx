@@ -13,7 +13,7 @@ export default function Footer() {
               <Image src="/images/logo-text-name.png" alt="Bluto" width={72} height={20} className="h-4 w-auto" />
             </Link>
             <p className="text-sm text-muted max-w-xs leading-relaxed mt-3">
-              Your personal AI companion that listens, remembers, and helps you navigate life.
+              The AI companion that remembers your story and helps you live better every single day.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Bluto. All rights reserved.
           </p>
           <p className="text-xs text-muted">
-            AI-generated content is for informational and entertainment purposes only.
+            Bluto is an AI companion for informational and entertainment purposes only.
           </p>
         </div>
       </div>
