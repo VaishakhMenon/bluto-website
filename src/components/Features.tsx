@@ -1,156 +1,156 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const features = [
   {
-    emoji: "💬",
-    title: "Your midnight",
-    titleAccent: "sounding board",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+    ),
+    title: "Your midnight sounding board",
     description:
       "3 AM thoughts? Big life decisions? Just need to vent? Bluto listens without judgment and actually remembers what you said last time.",
-    image: "/images/features/thoughts.png",
+    detail: "Voice or text. Anytime. Bluto adapts to your communication style, remembers context from past conversations, and responds like someone who genuinely knows your story.",
   },
   {
-    emoji: "📋",
-    title: "Never forget",
-    titleAccent: "what matters",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="9 11 12 14 22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </svg>
+    ),
+    title: "Never forget what matters",
     description:
-      "Tasks, habits, reminders, daily streaks. Tell Bluto what you need to do and it holds you accountable. No more things slipping through the cracks.",
-    image: "/images/features/productivity.png",
+      "Tasks, habits, reminders, daily streaks. Tell Bluto what you need to do and it holds you accountable.",
+    detail: "Voice-powered task creation, smart categorization, daily ritual tracking, and gentle nudges when things slip through the cracks. Your second brain, minus the forgetting.",
   },
   {
-    emoji: "🔮",
-    title: "Your daily",
-    titleAccent: "cosmic check-in",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 20V10" /><path d="M12 20V4" /><path d="M6 20v-6" />
+      </svg>
+    ),
+    title: "A gym partner who shows up",
     description:
-      "Horoscopes, zodiac compatibility, birth chart insights. Whether you live by the stars or just think it's fun, Bluto has your sign covered.",
-    image: "/images/features/astrology.png",
+      "AI workout plans, exercise tracking, PR celebrations, and progressive overload hints. Bluto spots your gains before you do.",
+    detail: "Log workouts by voice. Get AI-generated training plans. Track personal records automatically. Weekly recaps that actually tell you something useful about your progress.",
   },
   {
-    emoji: "🎙️",
-    title: "Just talk.",
-    titleAccent: "Out loud.",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2" /><line x1="12" x2="12" y1="19" y2="22" />
+      </svg>
+    ),
+    title: "Just talk. Out loud.",
     description:
-      "On your commute, during a walk, while you cook. Bluto's voice mode turns any moment into a real conversation. Hands free, judgment free.",
-    image: "/images/features/voice.png",
-  },
-  {
-    emoji: "🥗",
-    title: "Meals that fit",
-    titleAccent: "your life",
-    description:
-      "Not generic diet plans. Bluto learns what you actually eat, respects your culture and preferences, and suggests meals you'll want to make.",
-    image: "/images/features/nutrition.png",
-  },
-  {
-    emoji: "💪",
-    title: "A gym partner",
-    titleAccent: "who shows up",
-    description:
-      "AI-powered workout plans, exercise tracking, PR celebrations, and progressive overload hints. Bluto spots your gains before you do.",
-    image: "/images/features/fitness.png",
-  },
-  {
-    emoji: "🔖",
-    title: "Save it now.",
-    titleAccent: "Read it later.",
-    description:
-      "Found a great article at the wrong time? Save the link with your voice and Bluto keeps it organized until you're ready.",
-    image: "/images/features/bookmarks.png",
-  },
-  {
-    emoji: "💳",
-    title: "Know where",
-    titleAccent: "your money goes",
-    description:
-      "Track every subscription in one place. See your monthly spend at a glance. No more surprise charges from apps you forgot about.",
-    image: "/images/features/subscriptions.png",
+      "On your commute, during a walk, while you cook. Voice mode turns any moment into a real conversation.",
+    detail: "8 companion voices across 5 languages. Natural speech recognition that handles accents, filler words, and interruptions. Hands free, judgment free.",
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.08 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 export default function Features() {
+  const [active, setActive] = useState(0);
+
   return (
-    <section id="features" className="relative pt-16 pb-28 px-6 bg-background">
+    <section id="features" className="relative py-24 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
-        {/* Section header — Pi style */}
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-20"
+          className="mb-6"
         >
-          <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight">
+          <p className="text-xs font-medium tracking-widest uppercase text-muted mb-4">
+            Benefits
+          </p>
+          <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight max-w-2xl">
             One companion.{" "}
             <span className="serif-italic">Every part of your day.</span>
           </h2>
-          <p className="text-muted text-base md:text-lg max-w-xl mx-auto mt-4 leading-relaxed">
-            Most AI apps do one thing. Bluto handles your fitness, nutrition,
-            productivity, mental wellness, and more. All in one place,
-            all personalized to you.
-          </p>
         </motion.div>
 
-        {/* Feature grid — Pi card style */}
+        {/* Feature columns */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 mt-14"
         >
-          {features.map((feature) => (
-            <motion.div
-              key={feature.title + feature.titleAccent}
-              variants={cardVariants}
-              className="group rounded-2xl bg-card border border-card-border overflow-hidden hover:shadow-md transition-all"
+          {features.map((feature, i) => (
+            <button
+              key={feature.title}
+              onClick={() => setActive(i)}
+              className={`text-left p-6 border-t border-card-border transition-all duration-300 group cursor-pointer ${
+                active === i
+                  ? "bg-cream"
+                  : "hover:bg-cream/50"
+              }`}
             >
-              {/* Text */}
-              <div className="p-7 pb-4">
-                <h3 className="text-xl md:text-2xl font-medium text-foreground mb-2 leading-snug">
-                  {feature.title}{" "}
-                  <span className="serif-italic">{feature.titleAccent}</span>
-                </h3>
-                <p className="text-sm text-muted leading-relaxed">
-                  {feature.description}
-                </p>
+              <div className={`mb-4 transition-colors ${active === i ? "text-foreground" : "text-muted"}`}>
+                {feature.icon}
               </div>
-
-              {/* Illustration */}
-              <div className="relative w-full h-48 bg-cream">
-                <Image
-                  src={feature.image}
-                  alt={`${feature.title} ${feature.titleAccent}`}
-                  fill
-                  className="object-cover"
-                  onError={(e) => {
-                    // Hide broken image, show emoji fallback
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                  }}
-                />
-                {/* Emoji fallback — shows if image not yet added */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl opacity-30">{feature.emoji}</span>
-                </div>
-              </div>
-            </motion.div>
+              <h3 className="text-sm font-semibold text-foreground mb-2 leading-snug">
+                {feature.title}
+              </h3>
+              <p className="text-xs text-muted leading-relaxed">
+                {feature.description}
+              </p>
+            </button>
           ))}
         </motion.div>
+
+        {/* Expanded detail area */}
+        <div className="mt-0 rounded-b-2xl overflow-hidden border border-card-border border-t-0 bg-cream">
+          <div className="grid grid-cols-1 md:grid-cols-2 min-h-[320px]">
+            {/* Detail text */}
+            <div className="p-10 md:p-14 flex flex-col justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-medium text-foreground mb-4 leading-snug">
+                    {features[active].title}
+                  </h3>
+                  <p className="text-muted text-sm md:text-base leading-relaxed">
+                    {features[active].detail}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Image placeholder */}
+            <div className="relative bg-card-border/30 flex items-center justify-center min-h-[280px] md:min-h-0">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-center p-8"
+                >
+                  <div className="w-20 h-20 mx-auto rounded-2xl bg-background/80 flex items-center justify-center mb-4">
+                    <span className="text-foreground scale-150">
+                      {features[active].icon}
+                    </span>
+                  </div>
+                  <p className="text-xs text-muted">Feature image coming soon</p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

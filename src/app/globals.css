@@ -3,6 +3,15 @@
 /* Disable Tailwind dark mode entirely */
 @custom-variant dark (&:not(*));
 
+/* Gelica italic — self-hosted */
+@font-face {
+  font-family: 'Gelica';
+  src: url('/fonts/Gelica-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Force light mode — no dark mode at all */
 html {
   color-scheme: light only;
@@ -48,7 +57,7 @@ html {
   --color-warm-white: var(--warm-white);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-playfair);
+  --font-serif: 'Gelica';
 }
 
 body {
@@ -57,8 +66,8 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* Italic serif accent text */
+/* Italic serif accent text — Gelica */
 .serif-italic {
-  font-family: var(--font-serif), Georgia, 'Times New Roman', serif;
+  font-family: 'Gelica', Georgia, 'Times New Roman', serif;
   font-style: italic;
 }

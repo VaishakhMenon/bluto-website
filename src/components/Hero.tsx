@@ -1,85 +1,104 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center overflow-hidden">
-      {/* Image area */}
-      <div className="relative w-full min-h-screen">
-        <Image
-          src="/images/hero-image.jpg"
-          alt="Mountain landscape"
-          fill
-          className="object-cover"
-          priority
-          quality={90}
-        />
-        {/* Minimal gradient — only fades at the very bottom to blend into next section */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(
-              to bottom,
-              transparent 0%,
-              transparent 65%,
-              rgba(250, 245, 238, 0.4) 80%,
-              rgba(250, 245, 238, 0.8) 90%,
-              #faf5ee 100%
-            )`,
-          }}
-        />
-        {/* Subtle top vignette for nav readability */}
-        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/20 to-transparent" />
+    <section className="relative pt-32 pb-20 px-6 bg-background overflow-hidden">
+      <div className="max-w-5xl mx-auto text-center">
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-[1.05] text-foreground"
+        >
+          The AI that actually{" "}
+          <span className="serif-italic">knows you.</span>
+        </motion.h1>
 
-        {/* All content overlaid on the image */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-          {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] mb-6 text-white drop-shadow-lg max-w-4xl"
-          >
-            The AI that actually{" "}
-            <span className="serif-italic">knows you</span>
-          </motion.h1>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-muted text-base md:text-lg max-w-xl mx-auto mt-6 leading-relaxed"
+        >
+          Bluto remembers your story, tracks your goals, and helps you think
+          clearly. One companion for your workouts, meals, tasks, and the
+          moments when you just need to talk.
+        </motion.p>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base md:text-lg text-white/85 max-w-xl mx-auto mb-10 leading-relaxed drop-shadow-md"
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="mt-10"
+        >
+          <a
+            href="#download"
+            className="inline-flex px-8 py-3.5 rounded-full bg-foreground text-background hover:bg-accent-hover transition-colors font-medium text-sm"
           >
-            Bluto remembers your story, tracks your goals, and helps you think
-            clearly. One companion for your workouts, your meals, your tasks,
-            and the moments when you just need to talk.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <a
-              href="#features"
-              className="px-8 py-3.5 rounded-full border border-white/40 text-white hover:bg-white/10 transition-all font-medium text-sm backdrop-blur-[2px]"
-            >
-              See what's possible
-            </a>
-            <a
-              href="#download"
-              className="px-8 py-3.5 rounded-full bg-white text-foreground hover:bg-white/90 transition-colors font-medium text-sm shadow-lg"
-            >
-              Try it free
-            </a>
-          </motion.div>
-        </div>
+            Try it free
+          </a>
+        </motion.div>
       </div>
+
+      {/* Phone mockup */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="max-w-sm mx-auto mt-16"
+      >
+        <div className="w-[280px] md:w-[320px] mx-auto rounded-[2.5rem] border-2 border-card-border bg-white overflow-hidden shadow-2xl relative">
+          {/* Notch */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-6 bg-cream rounded-b-2xl z-10" />
+
+          {/* Screen content */}
+          <div className="pt-10 pb-6 px-5 space-y-3 min-h-[420px]">
+            <div className="flex items-center gap-2.5 mb-5">
+              <div className="w-9 h-9 rounded-full bg-cream flex items-center justify-center">
+                <span className="text-foreground text-xs font-bold">B</span>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-foreground">Bluto</div>
+                <div className="text-[10px] text-muted">Online</div>
+              </div>
+            </div>
+
+            <div className="bg-cream rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%]">
+              <p className="text-[12px] text-foreground leading-relaxed">
+                Good morning! You crushed that 5-day streak. Ready to plan today&apos;s workout?
+              </p>
+            </div>
+            <div className="bg-foreground rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[75%] ml-auto">
+              <p className="text-[12px] text-background leading-relaxed">
+                Let&apos;s go! Upper body today
+              </p>
+            </div>
+            <div className="bg-cream rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[85%]">
+              <p className="text-[12px] text-foreground leading-relaxed">
+                On it. I&apos;ll build on last week&apos;s gains. Here&apos;s your plan:
+              </p>
+            </div>
+            <div className="bg-cream rounded-2xl rounded-tl-sm px-3.5 py-2.5 max-w-[90%]">
+              <p className="text-[11px] text-foreground leading-relaxed font-medium">
+                Bench Press 4x8 @ 80kg<br/>
+                OHP 3x10 @ 40kg<br/>
+                Cable Flyes 3x12<br/>
+                Lateral Raises 4x15
+              </p>
+            </div>
+            <div className="bg-foreground rounded-2xl rounded-tr-sm px-3.5 py-2.5 max-w-[60%] ml-auto">
+              <p className="text-[12px] text-background leading-relaxed">
+                Perfect, let&apos;s crush it
+              </p>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }

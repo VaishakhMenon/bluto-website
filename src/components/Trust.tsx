@@ -4,82 +4,93 @@ import { motion } from "framer-motion";
 
 const items = [
   {
-    icon: "🔒",
-    title: "Your conversations stay private",
-    description: "We never sell your data. Period. Every conversation is encrypted and you can wipe everything with one tap whenever you want.",
+    title: "Private by default",
+    description:
+      "Your conversations are encrypted. We never sell your data. Delete everything with one tap, anytime.",
   },
   {
-    icon: "⚕️",
-    title: "Smart AI, honest boundaries",
-    description: "Bluto helps you think, plan, and stay on track. For medical, nutritional, or mental health decisions, it always recommends consulting a professional.",
+    title: "Honest boundaries",
+    description:
+      "Bluto helps you think and plan. For medical, nutritional, or mental health decisions, it always recommends a professional.",
   },
   {
-    icon: "👁️",
     title: "No hidden fine print",
-    description: "Our Privacy Policy and Terms of Service are written in plain language. No surprises, no buried clauses. You deserve to know exactly how things work.",
+    description:
+      "Our Privacy Policy and Terms are written in plain language. No surprises, no buried clauses.",
+  },
+  {
+    title: "Pay what you want",
+    description:
+      "No subscriptions. No tiers. Just top up credits when you need them, starting at $1. 200 free credits to start.",
   },
 ];
 
 export default function Trust() {
   return (
-    <section id="safety" className="relative py-28 px-6 bg-warm-white">
-      <div className="max-w-5xl mx-auto">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight">
-            Your trust is{" "}
-            <span className="serif-italic">non-negotiable.</span>
-          </h2>
-          <p className="text-muted text-base md:text-lg max-w-xl mx-auto mt-4 leading-relaxed">
-            You share real things with Bluto. We protect every word like it matters. Because it does.
-          </p>
-        </motion.div>
+    <section id="safety" className="relative py-24 px-6 bg-cream">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+          {/* Left — heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-xs font-medium tracking-widest uppercase text-muted mb-4">
+              Trust & Safety
+            </p>
+            <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight">
+              Your trust is{" "}
+              <span className="serif-italic">non-negotiable.</span>
+            </h2>
+            <p className="text-muted text-sm md:text-base mt-4 leading-relaxed max-w-md">
+              You share real things with Bluto. We protect every word like it
+              matters. Because it does.
+            </p>
+          </motion.div>
 
-        {/* Trust cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {items.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-2xl bg-card border border-card-border p-7 text-center"
-            >
-              <span className="text-3xl block mb-4">{item.icon}</span>
-              <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
-              <p className="text-sm text-muted leading-relaxed">{item.description}</p>
-            </motion.div>
-          ))}
+          {/* Right — items with dividers */}
+          <div className="flex flex-col justify-center">
+            {items.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="border-t border-card-border py-5 flex items-start gap-5"
+              >
+                <span className="text-muted text-xs font-medium tracking-wider mt-1 flex-shrink-0 w-8">
+                  {String(i + 1).padStart(3, "0")}
+                </span>
+                <div className="flex-1">
+                  <h3 className="text-sm font-semibold text-foreground mb-0.5">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-muted leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+            <div className="border-t border-card-border" />
+          </div>
         </div>
 
         {/* Disclaimer */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-10 rounded-2xl border border-amber-300/40 bg-amber-50 p-6"
+          className="text-xs text-muted mt-16 max-w-2xl leading-relaxed"
         >
-          <div className="flex items-start gap-3">
-            <span className="text-amber-600 text-lg flex-shrink-0">⚠️</span>
-            <div>
-              <h4 className="font-semibold text-foreground mb-1 text-sm">A quick note</h4>
-              <p className="text-sm text-muted leading-relaxed">
-                Bluto is an AI companion built for productivity, wellness tracking, and everyday conversation.
-                It is not a licensed professional and should not replace qualified medical, nutritional,
-                therapeutic, financial, or legal advice. For important health and wellness decisions,
-                always consult the right professionals.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+          Bluto is an AI companion for productivity, wellness tracking, and
+          everyday conversation. It is not a licensed professional and should not
+          replace qualified medical, nutritional, therapeutic, financial, or
+          legal advice.
+        </motion.p>
       </div>
     </section>
   );

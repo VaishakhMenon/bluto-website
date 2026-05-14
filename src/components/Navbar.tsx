@@ -42,40 +42,32 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop nav — white text when over hero, dark when scrolled */}
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           <a
             href="#features"
-            className={`text-sm font-medium transition-colors ${
-              scrolled ? "text-foreground/80 hover:text-foreground" : "text-white/80 hover:text-white"
-            }`}
+            className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
           >
             Features
           </a>
           <a
             href="#how-it-works"
-            className={`text-sm font-medium transition-colors ${
-              scrolled ? "text-foreground/80 hover:text-foreground" : "text-white/80 hover:text-white"
-            }`}
+            className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
           >
             How it works
           </a>
           <a
             href="#download"
-            className={`text-sm font-medium px-6 py-2.5 rounded-full transition-colors ${
-              scrolled
-                ? "bg-foreground text-background hover:bg-accent-hover"
-                : "bg-white text-foreground hover:bg-white/90"
-            }`}
+            className="text-sm font-medium px-6 py-2.5 rounded-full bg-foreground text-background hover:bg-accent-hover transition-colors"
           >
-            Download
+            Get Started
           </a>
         </div>
 
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden p-2 ${scrolled ? "text-foreground" : "text-white"}`}
+          className="md:hidden p-2 text-foreground"
           aria-label="Toggle menu"
         >
           <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -110,7 +102,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="text-sm font-medium px-5 py-2.5 rounded-full bg-foreground text-background text-center"
               >
-                Download
+                Get Started
               </a>
             </div>
           </motion.div>
