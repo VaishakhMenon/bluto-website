@@ -28,7 +28,7 @@ export default function Download() {
 
           {/* Content */}
           <div className="relative z-10 py-20 md:py-28 px-8 text-center">
-            <h2 className="text-3xl md:text-5xl font-medium text-white leading-tight">
+            <h2 className="text-[24px] md:text-[30px] font-medium text-white leading-tight">
               Ready to meet your new{" "}
               <span className="serif-italic">favorite conversation?</span>
             </h2>
