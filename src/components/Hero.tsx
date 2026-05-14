@@ -46,23 +46,43 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Device image */}
+      {/* Device with background card */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="max-w-md mx-auto mt-16"
+        className="max-w-3xl mx-auto mt-16 relative"
       >
-        <Image
-          src="/images/hero-device.png"
-          alt="Bluto app on mobile"
-          width={800}
-          height={1000}
-          className="w-full h-auto"
-          priority
-          quality={90}
-        />
+        {/* Background image card */}
+        <div className="rounded-3xl overflow-hidden shadow-lg">
+          <Image
+            src="/images/hero-device-image-backgound-card.jpg"
+            alt=""
+            width={1200}
+            height={600}
+            className="w-full h-auto object-cover"
+            priority
+            quality={90}
+          />
+        </div>
+
+        {/* Phone floating on top */}
+        <div className="absolute left-1/2 -translate-x-1/2 -bottom-12 md:-bottom-16 drop-shadow-2xl">
+          <Image
+            src="/images/hero-device.png"
+            alt="Bluto app on mobile"
+            width={500}
+            height={625}
+            className="w-[200px] md:w-[260px] h-auto"
+            priority
+            quality={90}
+            style={{ filter: "drop-shadow(0 25px 50px rgba(0,0,0,0.25))" }}
+          />
+        </div>
       </motion.div>
+
+      {/* Spacer for the overflowing phone */}
+      <div className="h-16 md:h-20" />
     </section>
   );
 }
