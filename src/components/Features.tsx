@@ -7,48 +7,43 @@ const features = [
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <circle cx="12" cy="8" r="5" />
+        <path d="M20 21a8 8 0 0 0-16 0" />
       </svg>
     ),
-    title: "Your midnight sounding board",
+    title: "AI Avatars",
     description:
-      "3 AM thoughts? Big life decisions? Just need to vent? Bluto listens without judgment and actually remembers what you said last time.",
-    detail: "Voice or text. Anytime. Bluto adapts to your communication style, remembers context from past conversations, and responds like someone who genuinely knows your story.",
+      "Five personality modes for every mood. Chill casual talk, office venting, gym coaching, astrology, and healthy eating — each one tuned to how you actually want to be spoken to.",
+    detail: "Switch between AI avatars that feel like different friends. Need workout motivation? Gym buddy mode. Want to decompress after work? Office vent mode. Curious about the stars? Astro universe. Each avatar remembers your history and adapts its tone to match the moment.",
+    tags: ["Casual talk", "Office vent", "Gym coach", "Astro universe", "Nutrition guide"],
   },
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="9 11 12 14 22 4" />
-        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
       </svg>
     ),
-    title: "Never forget what matters",
+    title: "Personal tools",
     description:
-      "Tasks, habits, reminders, daily streaks. Tell Bluto what you need to do and it holds you accountable.",
-    detail: "Voice-powered task creation, smart categorization, daily ritual tracking, and gentle nudges when things slip through the cracks. Your second brain, minus the forgetting.",
+      "Bookmarks, workout logs, task lists, exercise library, subscription manager, notes, and a shared grocery list — all with an AI layer that actually understands your data.",
+    detail: "Stop switching between 10 apps. Bluto keeps everything in one place — bookmark important links, log your workouts, manage tasks, track subscriptions, take notes, and share a grocery list with your household. Every tool comes with built-in AI analysis that spots patterns and gives you insights you'd never catch on your own.",
+    tags: ["Bookmarks", "Workout log", "Task list", "Exercise library", "Subscriptions", "Notes", "Grocery list"],
   },
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 20V10" /><path d="M12 20V4" /><path d="M6 20v-6" />
+        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
       </svg>
     ),
-    title: "A gym partner who shows up",
+    title: "Nudges for productivity",
     description:
-      "AI workout plans, exercise tracking, PR celebrations, and progressive overload hints. Bluto spots your gains before you do.",
-    detail: "Log workouts by voice. Get AI-generated training plans. Track personal records automatically. Weekly recaps that actually tell you something useful about your progress.",
-  },
-  {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-        <path d="M19 10v2a7 7 0 0 1-14 0v-2" /><line x1="12" x2="12" y1="19" y2="22" />
-      </svg>
-    ),
-    title: "Just talk. Out loud.",
-    description:
-      "On your commute, during a walk, while you cook. Voice mode turns any moment into a real conversation.",
-    detail: "8 companion voices across 5 languages. Natural speech recognition that handles accents, filler words, and interruptions. Hands free, judgment free.",
+      "Morning briefs, streak alerts, task reminders, and smart nudges via email and push notifications. Bluto keeps you moving without being annoying.",
+    detail: "Wake up to a personalized morning email with your tasks, workout streak, and the day ahead. Get push notifications for reminders you set. Receive streak alerts when you're on a roll — or gentle nudges when things slip. All configurable, never spammy.",
+    tags: ["Morning briefs", "Streak alerts", "Task reminders", "Push notifications", "Email digests"],
   },
 ];
 
@@ -68,7 +63,7 @@ export default function Features() {
           className="mb-6"
         >
           <p className="text-xs font-medium tracking-widest uppercase text-muted mb-4">
-            Benefits
+            Features
           </p>
           <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight max-w-2xl">
             One companion.{" "}
@@ -85,7 +80,6 @@ export default function Features() {
                 className="w-full text-left py-5 px-1 flex items-center justify-between gap-4 transition-colors"
               >
                 <div className="flex items-center gap-3 flex-1 min-w-0">
-                  {/* Active dot */}
                   <div
                     className={`w-2 h-2 rounded-full flex-shrink-0 transition-all duration-300 ${
                       mobileOpen === i ? "bg-foreground scale-100" : "bg-transparent scale-0"
@@ -126,27 +120,20 @@ export default function Features() {
                     className="overflow-hidden"
                   >
                     <div className="pl-6 pr-1 pb-6 pt-1">
-                      <p className="text-sm text-muted leading-relaxed mb-5">
+                      <p className="text-sm text-muted leading-relaxed mb-4">
                         {feature.detail}
                       </p>
 
-                      {/* Image placeholder card */}
-                      <div className="rounded-xl bg-cream border border-card-border overflow-hidden">
-                        <div className="flex items-center gap-1.5 px-3 py-2 border-b border-card-border">
-                          <div className="w-2 h-2 rounded-full bg-card-border" />
-                          <div className="w-2 h-2 rounded-full bg-card-border" />
-                          <div className="w-2 h-2 rounded-full bg-card-border" />
-                        </div>
-                        <div className="flex items-center justify-center py-12 px-6">
-                          <div className="text-center">
-                            <div className="w-14 h-14 mx-auto rounded-xl bg-background flex items-center justify-center mb-3">
-                              <span className="text-foreground scale-125">
-                                {feature.icon}
-                              </span>
-                            </div>
-                            <p className="text-xs text-muted">Feature image coming soon</p>
-                          </div>
-                        </div>
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {feature.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-xs px-3 py-1 rounded-full bg-cream text-muted border border-card-border"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </motion.div>
@@ -157,13 +144,13 @@ export default function Features() {
           <div className="border-t border-card-border" />
         </div>
 
-        {/* ─── Desktop: Tab columns ─── */}
+        {/* ─── Desktop: Tab columns (3 cols) ─── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-0 mt-14"
+          className="hidden md:grid grid-cols-3 gap-0 mt-14"
         >
           {features.map((feature, i) => (
             <button
@@ -176,7 +163,6 @@ export default function Features() {
               }`}
             >
               <div className="flex items-center gap-2 mb-3">
-                {/* Active dot */}
                 <div
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     active === i ? "bg-foreground" : "bg-transparent"
@@ -223,9 +209,21 @@ export default function Features() {
                   <h3 className="text-2xl lg:text-3xl font-medium text-foreground mb-4 leading-snug">
                     {features[active].title}
                   </h3>
-                  <p className="text-muted text-sm lg:text-base leading-relaxed">
+                  <p className="text-muted text-sm lg:text-base leading-relaxed mb-6">
                     {features[active].detail}
                   </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {features[active].tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-3 py-1.5 rounded-full bg-background text-muted border border-card-border"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
