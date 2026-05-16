@@ -54,6 +54,7 @@ const features = [
 
 export default function Features() {
   const [active, setActive] = useState(0);
+  const [mobileOpen, setMobileOpen] = useState<number | null>(0);
 
   return (
     <section id="features" className="relative py-24 px-6 bg-background">
@@ -75,13 +76,67 @@ export default function Features() {
           </h2>
         </motion.div>
 
-        {/* Feature columns */}
+        {/* Mobile: Accordion layout */}
+        <div className="md:hidden mt-14 space-y-0">
+          {features.map((feature, i) => (
+            <div key={feature.title} className="border-t border-card-border">
+              <button
+                onClick={() => setMobileOpen(mobileOpen === i ? null : i)}
+                className="w-full text-left py-5 px-4 flex items-center gap-4 transition-colors"
+              >
+                <div className={`transition-colors flex-shrink-0 ${mobileOpen === i ? "text-foreground" : "text-muted"}`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-sm font-semibold text-foreground flex-1 leading-snug">
+                  {feature.title}
+                </h3>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`text-muted transition-transform duration-300 flex-shrink-0 ${mobileOpen === i ? "rotate-180" : ""}`}
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+
+              <AnimatePresence>
+                {mobileOpen === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-4 pb-6 pt-1">
+                      <p className="text-xs text-muted leading-relaxed mb-3">
+                        {feature.description}
+                      </p>
+                      <p className="text-sm text-foreground/80 leading-relaxed">
+                        {feature.detail}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+          <div className="border-t border-card-border" />
+        </div>
+
+        {/* Desktop: Tab layout (hidden on mobile) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 mt-14"
+          className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-0 mt-14"
         >
           {features.map((feature, i) => (
             <button
@@ -106,8 +161,8 @@ export default function Features() {
           ))}
         </motion.div>
 
-        {/* Expanded detail area */}
-        <div className="mt-0 rounded-b-2xl overflow-hidden border border-card-border border-t-0 bg-cream">
+        {/* Expanded detail area (desktop only) */}
+        <div className="hidden md:block mt-0 rounded-b-2xl overflow-hidden border border-card-border border-t-0 bg-cream">
           <div className="grid grid-cols-1 md:grid-cols-2 min-h-[320px]">
             {/* Detail text */}
             <div className="p-10 md:p-14 flex flex-col justify-center">
