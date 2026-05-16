@@ -76,30 +76,41 @@ export default function Features() {
           </h2>
         </motion.div>
 
-        {/* Mobile: Accordion layout */}
-        <div className="md:hidden mt-14 space-y-0">
+        {/* ─── Mobile: Accordion ─── */}
+        <div className="md:hidden mt-14">
           {features.map((feature, i) => (
             <div key={feature.title} className="border-t border-card-border">
               <button
                 onClick={() => setMobileOpen(mobileOpen === i ? null : i)}
-                className="w-full text-left py-5 px-4 flex items-center gap-4 transition-colors"
+                className="w-full text-left py-5 px-1 flex items-center justify-between gap-4 transition-colors"
               >
-                <div className={`transition-colors flex-shrink-0 ${mobileOpen === i ? "text-foreground" : "text-muted"}`}>
-                  {feature.icon}
+                <div className="flex items-center gap-3 flex-1 min-w-0">
+                  {/* Active dot */}
+                  <div
+                    className={`w-2 h-2 rounded-full flex-shrink-0 transition-all duration-300 ${
+                      mobileOpen === i ? "bg-foreground scale-100" : "bg-transparent scale-0"
+                    }`}
+                  />
+                  <h3
+                    className={`text-base font-semibold leading-snug transition-colors ${
+                      mobileOpen === i ? "text-foreground" : "text-muted"
+                    }`}
+                  >
+                    {feature.title}
+                  </h3>
                 </div>
-                <h3 className="text-sm font-semibold text-foreground flex-1 leading-snug">
-                  {feature.title}
-                </h3>
                 <svg
-                  width="16"
-                  height="16"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className={`text-muted transition-transform duration-300 flex-shrink-0 ${mobileOpen === i ? "rotate-180" : ""}`}
+                  className={`text-muted transition-transform duration-300 flex-shrink-0 ${
+                    mobileOpen === i ? "rotate-180" : ""
+                  }`}
                 >
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
@@ -114,13 +125,29 @@ export default function Features() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-4 pb-6 pt-1">
-                      <p className="text-xs text-muted leading-relaxed mb-3">
-                        {feature.description}
-                      </p>
-                      <p className="text-sm text-foreground/80 leading-relaxed">
+                    <div className="pl-6 pr-1 pb-6 pt-1">
+                      <p className="text-sm text-muted leading-relaxed mb-5">
                         {feature.detail}
                       </p>
+
+                      {/* Image placeholder card */}
+                      <div className="rounded-xl bg-cream border border-card-border overflow-hidden">
+                        <div className="flex items-center gap-1.5 px-3 py-2 border-b border-card-border">
+                          <div className="w-2 h-2 rounded-full bg-card-border" />
+                          <div className="w-2 h-2 rounded-full bg-card-border" />
+                          <div className="w-2 h-2 rounded-full bg-card-border" />
+                        </div>
+                        <div className="flex items-center justify-center py-12 px-6">
+                          <div className="text-center">
+                            <div className="w-14 h-14 mx-auto rounded-xl bg-background flex items-center justify-center mb-3">
+                              <span className="text-foreground scale-125">
+                                {feature.icon}
+                              </span>
+                            </div>
+                            <p className="text-xs text-muted">Feature image coming soon</p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -130,7 +157,7 @@ export default function Features() {
           <div className="border-t border-card-border" />
         </div>
 
-        {/* Desktop: Tab layout (hidden on mobile) */}
+        {/* ─── Desktop: Tab columns ─── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -142,30 +169,43 @@ export default function Features() {
             <button
               key={feature.title}
               onClick={() => setActive(i)}
-              className={`text-left p-6 border-t border-card-border transition-all duration-300 group cursor-pointer ${
+              className={`text-left p-6 border-t-2 transition-all duration-300 cursor-pointer ${
                 active === i
-                  ? "bg-cream"
-                  : "hover:bg-cream/50"
+                  ? "border-foreground"
+                  : "border-card-border hover:border-muted"
               }`}
             >
-              <div className={`mb-4 transition-colors ${active === i ? "text-foreground" : "text-muted"}`}>
-                {feature.icon}
+              <div className="flex items-center gap-2 mb-3">
+                {/* Active dot */}
+                <div
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    active === i ? "bg-foreground" : "bg-transparent"
+                  }`}
+                />
+                <h3
+                  className={`text-sm font-semibold leading-snug transition-colors ${
+                    active === i ? "text-foreground" : "text-muted"
+                  }`}
+                >
+                  {feature.title}
+                </h3>
               </div>
-              <h3 className="text-sm font-semibold text-foreground mb-2 leading-snug">
-                {feature.title}
-              </h3>
-              <p className="text-xs text-muted leading-relaxed">
+              <p
+                className={`text-xs leading-relaxed transition-colors ${
+                  active === i ? "text-muted" : "text-muted/60"
+                }`}
+              >
                 {feature.description}
               </p>
             </button>
           ))}
         </motion.div>
 
-        {/* Expanded detail area (desktop only) */}
-        <div className="hidden md:block mt-0 rounded-b-2xl overflow-hidden border border-card-border border-t-0 bg-cream">
-          <div className="grid grid-cols-1 md:grid-cols-2 min-h-[320px]">
+        {/* Desktop detail area */}
+        <div className="hidden md:block mt-0 rounded-2xl overflow-hidden border border-card-border bg-cream">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
             {/* Detail text */}
-            <div className="p-10 md:p-14 flex flex-col justify-center">
+            <div className="p-10 lg:p-14 flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -174,33 +214,49 @@ export default function Features() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <h3 className="text-2xl md:text-3xl font-medium text-foreground mb-4 leading-snug">
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="text-foreground">{features[active].icon}</span>
+                    <p className="text-xs font-medium tracking-widest uppercase text-muted">
+                      {features[active].title}
+                    </p>
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-medium text-foreground mb-4 leading-snug">
                     {features[active].title}
                   </h3>
-                  <p className="text-muted text-sm md:text-base leading-relaxed">
+                  <p className="text-muted text-sm lg:text-base leading-relaxed">
                     {features[active].detail}
                   </p>
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            {/* Image placeholder */}
-            <div className="relative bg-card-border/30 flex items-center justify-center min-h-[280px] md:min-h-0">
+            {/* Image placeholder with browser chrome */}
+            <div className="relative flex items-center justify-center p-6 lg:p-10">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.97 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.3 }}
-                  className="text-center p-8"
+                  className="w-full rounded-xl bg-background border border-card-border overflow-hidden shadow-sm"
                 >
-                  <div className="w-20 h-20 mx-auto rounded-2xl bg-background/80 flex items-center justify-center mb-4">
-                    <span className="text-foreground scale-150">
-                      {features[active].icon}
-                    </span>
+                  {/* Browser dots */}
+                  <div className="flex items-center gap-1.5 px-4 py-3 border-b border-card-border">
+                    <div className="w-2.5 h-2.5 rounded-full bg-card-border" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-card-border" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-card-border" />
                   </div>
-                  <p className="text-xs text-muted">Feature image coming soon</p>
+                  <div className="flex items-center justify-center py-20 px-8">
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto rounded-2xl bg-cream flex items-center justify-center mb-4">
+                        <span className="text-foreground scale-150">
+                          {features[active].icon}
+                        </span>
+                      </div>
+                      <p className="text-xs text-muted">Feature image coming soon</p>
+                    </div>
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>
