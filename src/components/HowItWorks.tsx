@@ -5,27 +5,27 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Sign up and pick your avatar",
+    title: "Pick a personality. Set the tone.",
     description:
-      "Create your account in seconds. Choose an AI avatar that matches your vibe — casual friend, gym coach, nutrition guide, astro reader, or office confidant.",
+      "Sign up in under a minute. Choose an AI avatar that matches the energy you need — gym motivation, career advice, cosmic readings, or just someone to talk to at 2 AM.",
   },
   {
     number: "02",
-    title: "Talk, type, or just log",
+    title: "Use your voice. Or don't.",
     description:
-      "Chat by text or voice. Log workouts, save bookmarks, create tasks, track subscriptions — use as much or as little as you want. Bluto adapts to you.",
+      "Talk out loud on your commute. Type from bed. Log a workout mid-set. Bluto works however you do — text, voice, or quick-log. No learning curve.",
   },
   {
     number: "03",
-    title: "Get smarter nudges every day",
+    title: "Wake up to a plan, not a panic.",
     description:
-      "Wake up to a personalized morning brief. Get streak alerts, task reminders, and AI-powered insights via email and push notifications.",
+      "Every morning, a brief hits your inbox — your tasks, your streak, your schedule. During the day, smart nudges keep things moving. Nothing spammy. Everything useful.",
   },
   {
     number: "04",
-    title: "It remembers, so you don't have to",
+    title: "The longer you stay, the better it gets.",
     description:
-      "Bluto learns your preferences, tracks your progress, and connects the dots across conversations. The more you use it, the more useful it becomes.",
+      "Bluto remembers your goals, your preferences, and the things you mentioned three weeks ago. It connects dots you didn't even know existed. This is AI that compounds.",
   },
 ];
 
@@ -41,9 +41,9 @@ export default function HowItWorks() {
           className="mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight text-center">
-            From download to{" "}
+            Five minutes to set up.{" "}
             <br className="hidden md:block" />
-            <span className="serif-italic">&ldquo;how did I live without this&rdquo;</span>
+            <span className="serif-italic">A lifetime of showing up.</span>
           </h2>
         </motion.div>
 

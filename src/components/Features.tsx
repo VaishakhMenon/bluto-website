@@ -13,8 +13,8 @@ const features = [
     ),
     title: "AI Avatars",
     description:
-      "Five personality modes for every mood. Chill casual talk, office venting, gym coaching, astrology, and healthy eating — each one tuned to how you actually want to be spoken to.",
-    detail: "Switch between AI avatars that feel like different friends. Need workout motivation? Gym buddy mode. Want to decompress after work? Office vent mode. Curious about the stars? Astro universe. Each avatar remembers your history and adapts its tone to match the moment.",
+      "Not one AI — five. A friend for late-night thoughts, a coach for the gym, a guide for what to eat. Switch moods, not apps.",
+    detail: "Every avatar has a personality. Your gym buddy pushes you harder. Your office confidant lets you vent without judgment. Your astro guide reads the stars. Your nutrition coach knows your macros. And your casual companion? Just vibes. Each one remembers everything — switch between them and pick up right where you left off.",
     tags: ["Casual talk", "Office vent", "Gym coach", "Astro universe", "Nutrition guide"],
   },
   {
@@ -26,10 +26,10 @@ const features = [
         <rect x="14" y="14" width="7" height="7" rx="1" />
       </svg>
     ),
-    title: "Personal tools",
+    title: "Your life, organized",
     description:
-      "Bookmarks, workout logs, task lists, exercise library, subscription manager, notes, and a shared grocery list — all with an AI layer that actually understands your data.",
-    detail: "Stop switching between 10 apps. Bluto keeps everything in one place — bookmark important links, log your workouts, manage tasks, track subscriptions, take notes, and share a grocery list with your household. Every tool comes with built-in AI analysis that spots patterns and gives you insights you'd never catch on your own.",
+      "Workouts, tasks, bookmarks, subscriptions, notes, groceries — everything you juggle, in one place. With AI that actually reads the room.",
+    detail: "You don't need seven apps and a spreadsheet. Log your workouts and watch Bluto spot your PRs. Save links and let AI summarize them. Track subscriptions before they silently drain your wallet. Share a grocery list that updates in real time. Every tool has an AI layer baked in — not bolted on — so your data actually works for you.",
     tags: ["Bookmarks", "Workout log", "Task list", "Exercise library", "Subscriptions", "Notes", "Grocery list"],
   },
   {
@@ -39,10 +39,10 @@ const features = [
         <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
       </svg>
     ),
-    title: "Nudges for productivity",
+    title: "Smart nudges",
     description:
-      "Morning briefs, streak alerts, task reminders, and smart nudges via email and push notifications. Bluto keeps you moving without being annoying.",
-    detail: "Wake up to a personalized morning email with your tasks, workout streak, and the day ahead. Get push notifications for reminders you set. Receive streak alerts when you're on a roll — or gentle nudges when things slip. All configurable, never spammy.",
+      "A morning brief that sets up your day. Streak alerts that keep you honest. Gentle reminders that land at exactly the right time.",
+    detail: "Open your inbox to a personalized rundown — your tasks, your streak, your schedule, all in one glance. Bluto nudges you when something slips, celebrates when you're consistent, and stays quiet when you don't need it. Push, email, your call. Productivity without the guilt trip.",
     tags: ["Morning briefs", "Streak alerts", "Task reminders", "Push notifications", "Email digests"],
   },
 ];
@@ -63,11 +63,11 @@ export default function Features() {
           className="mb-6"
         >
           <p className="text-xs font-medium tracking-widest uppercase text-muted mb-4">
-            Features
+            What you get
           </p>
           <h2 className="text-3xl md:text-5xl font-medium text-foreground leading-tight max-w-2xl">
-            One companion.{" "}
-            <span className="serif-italic">Every part of your day.</span>
+            One app that replaces{" "}
+            <span className="serif-italic">the ten you forgot to open.</span>
           </h2>
         </motion.div>
 
