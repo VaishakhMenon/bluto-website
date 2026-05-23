@@ -197,7 +197,7 @@ export default function Features() {
 
         {/* Desktop detail card */}
         <div className="hidden md:block mt-0 rounded-2xl overflow-hidden border border-card-border bg-white">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
             {/* Detail text */}
             <div className="p-10 lg:p-14 flex flex-col justify-center">
               <AnimatePresence mode="wait">
@@ -234,7 +234,7 @@ export default function Features() {
             </div>
 
             {/* Feature image */}
-            <div className="relative flex items-center justify-center p-6 lg:p-10">
+            <div className="relative flex items-center justify-center p-4 lg:p-5">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -242,7 +242,7 @@ export default function Features() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.3 }}
-                  className="relative w-full aspect-[4/3]"
+                  className="relative w-full h-full min-h-[350px] lg:min-h-[420px]"
                 >
                   {!imgError[active] ? (
                     <Image
