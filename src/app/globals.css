@@ -71,3 +71,12 @@ body {
   font-family: 'Gelica', Georgia, 'Times New Roman', serif;
   font-style: italic;
 }
+
+/* Hide scrollbar for carousel components (Safari) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
