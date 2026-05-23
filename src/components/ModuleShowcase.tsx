@@ -242,14 +242,12 @@ function UtilityCard({
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
       whileHover={{ y: -4, boxShadow: "0 8px 30px rgba(0,0,0,0.06)" }}
-      className="rounded-2xl border border-card-border bg-cream overflow-hidden transition-shadow"
+      className="rounded-2xl border border-card-border bg-white overflow-hidden transition-shadow"
     >
-      <div
-        className={`relative aspect-[4/3] bg-gradient-to-br ${item.gradient} flex items-center justify-center`}
-      >
+      <div className="relative aspect-[1/1] bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100 flex items-center justify-center overflow-hidden rounded-t-2xl">
         {!imgError ? (
           <Image
-            src={`/images/features/${item.id}.png`}
+            src={`/images/modules/${item.id}.png`}
             alt={item.title}
             fill
             className="object-cover"
@@ -257,18 +255,17 @@ function UtilityCard({
             sizes="(max-width: 768px) 50vw, 33vw"
           />
         ) : (
-          <div className="w-12 h-12 rounded-xl bg-white/50 flex items-center justify-center text-foreground/40">
+          <div className="w-14 h-14 rounded-xl bg-white/50 flex items-center justify-center text-foreground/30">
             {item.icon}
           </div>
         )}
       </div>
 
-      <div className="p-4">
-        <div className="flex items-center gap-2 mb-1.5">
-          <span className="text-foreground/60">{item.icon}</span>
-          <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
-        </div>
-        <p className="text-xs text-muted leading-relaxed">{item.description}</p>
+      <div className="p-5 md:p-6">
+        <h3 className="instrument-serif text-xl md:text-2xl text-foreground mb-2">
+          {item.title}
+        </h3>
+        <p className="text-sm text-muted leading-relaxed">{item.description}</p>
       </div>
     </motion.div>
   );
