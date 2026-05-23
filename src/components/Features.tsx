@@ -18,7 +18,7 @@ const features = [
     detail:
       "Every avatar has a personality. Your gym buddy pushes you harder. Your office confidant lets you vent without judgment. Your astro guide reads the stars. Your nutrition coach knows your macros. And your casual companion? Just vibes. Each one remembers everything — switch between them and pick up right where you left off.",
     tags: ["Casual Talk", "Office Rant", "Gym Buddy", "Astro Universe", "Nutrition Guide"],
-    image: "/images/features/ai-avatars.png",
+    image: "/images/features/AI-Avatars.png",
   },
   {
     icon: (
@@ -35,7 +35,7 @@ const features = [
     detail:
       "You don't need seven apps and a spreadsheet. Log your workouts and watch Bluto spot your PRs. Save links and get reminded to actually read them. Track subscriptions before they silently drain your wallet. Share a shopping list that updates in real time. Every tool has an AI layer baked in — not bolted on — so your data actually works for you.",
     tags: ["Bookmarks", "Workout Log", "Task List", "Exercise Library", "Subscriptions", "Notes", "Shopping List"],
-    image: "/images/features/life-organized.png",
+    image: "/images/features/Your-Life-Organised.png",
   },
   {
     icon: (
@@ -50,7 +50,7 @@ const features = [
     detail:
       "Open your inbox to a personalized rundown — your tasks, your streak, your schedule, all in one glance. Bluto nudges you when something slips, celebrates when you're consistent, and stays quiet when you don't need it. Push, email, your call. Productivity without the guilt trip.",
     tags: ["Morning Briefs", "Streak Alerts", "Task Reminders", "Push Notifications", "Email Digests", "Voice"],
-    image: "/images/features/smart-nudges.png",
+    image: "/images/features/Voice-Smart-Nudges.png",
   },
 ];
 
