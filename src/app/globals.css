@@ -72,6 +72,11 @@ body {
   font-style: italic;
 }
 
+/* Instrument Serif — feature titles */
+.instrument-serif {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+}
+
 /* Hide scrollbar for carousel components (Safari) */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const features = [
@@ -14,8 +15,10 @@ const features = [
     title: "AI Avatars",
     description:
       "Not one AI — five. A friend for late-night thoughts, a coach for the gym, a guide for what to eat. Switch moods, not apps.",
-    detail: "Every avatar has a personality. Your gym buddy pushes you harder. Your office confidant lets you vent without judgment. Your astro guide reads the stars. Your nutrition coach knows your macros. And your casual companion? Just vibes. Each one remembers everything — switch between them and pick up right where you left off.",
-    tags: ["Casual talk", "Office vent", "Gym coach", "Astro universe", "Nutrition guide"],
+    detail:
+      "Every avatar has a personality. Your gym buddy pushes you harder. Your office confidant lets you vent without judgment. Your astro guide reads the stars. Your nutrition coach knows your macros. And your casual companion? Just vibes. Each one remembers everything — switch between them and pick up right where you left off.",
+    tags: ["Casual Talk", "Office Rant", "Gym Buddy", "Astro Universe", "Nutrition Guide"],
+    image: "/images/features/ai-avatars.png",
   },
   {
     icon: (
@@ -28,9 +31,11 @@ const features = [
     ),
     title: "Your life, organized",
     description:
-      "Workouts, tasks, bookmarks, subscriptions, notes, groceries — everything you juggle, in one place. With AI that actually reads the room.",
-    detail: "You don't need seven apps and a spreadsheet. Log your workouts and watch Bluto spot your PRs. Save links and let AI summarize them. Track subscriptions before they silently drain your wallet. Share a grocery list that updates in real time. Every tool has an AI layer baked in — not bolted on — so your data actually works for you.",
-    tags: ["Bookmarks", "Workout log", "Task list", "Exercise library", "Subscriptions", "Notes", "Grocery list"],
+      "Workouts, tasks, bookmarks, subscriptions, notes, shopping lists — everything you juggle, in one place. With AI that actually reads the room.",
+    detail:
+      "You don't need seven apps and a spreadsheet. Log your workouts and watch Bluto spot your PRs. Save links and get reminded to actually read them. Track subscriptions before they silently drain your wallet. Share a shopping list that updates in real time. Every tool has an AI layer baked in — not bolted on — so your data actually works for you.",
+    tags: ["Bookmarks", "Workout Log", "Task List", "Exercise Library", "Subscriptions", "Notes", "Shopping List"],
+    image: "/images/features/life-organized.png",
   },
   {
     icon: (
@@ -39,17 +44,20 @@ const features = [
         <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
       </svg>
     ),
-    title: "Smart nudges",
+    title: "Voice & Smart Nudges",
     description:
       "A morning brief that sets up your day. Streak alerts that keep you honest. Gentle reminders that land at exactly the right time.",
-    detail: "Open your inbox to a personalized rundown — your tasks, your streak, your schedule, all in one glance. Bluto nudges you when something slips, celebrates when you're consistent, and stays quiet when you don't need it. Push, email, your call. Productivity without the guilt trip.",
-    tags: ["Morning briefs", "Streak alerts", "Task reminders", "Push notifications", "Email digests"],
+    detail:
+      "Open your inbox to a personalized rundown — your tasks, your streak, your schedule, all in one glance. Bluto nudges you when something slips, celebrates when you're consistent, and stays quiet when you don't need it. Push, email, your call. Productivity without the guilt trip.",
+    tags: ["Morning Briefs", "Streak Alerts", "Task Reminders", "Push Notifications", "Email Digests", "Voice"],
+    image: "/images/features/smart-nudges.png",
   },
 ];
 
 export default function Features() {
   const [active, setActive] = useState(0);
   const [mobileOpen, setMobileOpen] = useState<number | null>(0);
+  const [imgError, setImgError] = useState<Record<number, boolean>>({});
 
   return (
     <section id="features" className="relative py-24 px-6 bg-background">
@@ -187,7 +195,7 @@ export default function Features() {
           ))}
         </motion.div>
 
-        {/* Desktop detail area */}
+        {/* Desktop detail card */}
         <div className="hidden md:block mt-0 rounded-2xl overflow-hidden border border-card-border bg-cream">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
             {/* Detail text */}
@@ -206,7 +214,7 @@ export default function Features() {
                       {features[active].title}
                     </p>
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-medium text-foreground mb-4 leading-snug">
+                  <h3 className="instrument-serif text-3xl lg:text-4xl text-foreground mb-4 leading-snug">
                     {features[active].title}
                   </h3>
                   <p className="text-muted text-sm lg:text-base leading-relaxed mb-6">
@@ -228,7 +236,7 @@ export default function Features() {
               </AnimatePresence>
             </div>
 
-            {/* Image placeholder with browser chrome */}
+            {/* Feature image */}
             <div className="relative flex items-center justify-center p-6 lg:p-10">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -237,24 +245,29 @@ export default function Features() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.3 }}
-                  className="w-full rounded-xl bg-background border border-card-border overflow-hidden shadow-sm"
+                  className="relative w-full aspect-[4/3]"
                 >
-                  {/* Browser dots */}
-                  <div className="flex items-center gap-1.5 px-4 py-3 border-b border-card-border">
-                    <div className="w-2.5 h-2.5 rounded-full bg-card-border" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-card-border" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-card-border" />
-                  </div>
-                  <div className="flex items-center justify-center py-20 px-8">
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto rounded-2xl bg-cream flex items-center justify-center mb-4">
-                        <span className="text-foreground scale-150">
-                          {features[active].icon}
-                        </span>
+                  {!imgError[active] ? (
+                    <Image
+                      src={features[active].image}
+                      alt={features[active].title}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      onError={() => setImgError((prev) => ({ ...prev, [active]: true }))}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto rounded-2xl bg-background flex items-center justify-center mb-4">
+                          <span className="text-foreground scale-150">
+                            {features[active].icon}
+                          </span>
+                        </div>
+                        <p className="text-xs text-muted">Image coming soon</p>
                       </div>
-                      <p className="text-xs text-muted">Feature image coming soon</p>
                     </div>
-                  </div>
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>
