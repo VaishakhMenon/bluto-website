@@ -242,14 +242,15 @@ export default function Features() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.97 }}
                   transition={{ duration: 0.3 }}
-                  className="relative w-full h-full min-h-[350px] lg:min-h-[420px]"
+                  className="relative w-full h-full min-h-[350px] lg:min-h-[420px] flex items-center justify-center"
                 >
                   {!imgError[active] ? (
                     <Image
                       src={features[active].image}
                       alt={features[active].title}
-                      fill
-                      className="object-contain"
+                      width={600}
+                      height={450}
+                      className="object-contain max-w-full max-h-full"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       onError={() => setImgError((prev) => ({ ...prev, [active]: true }))}
                     />
