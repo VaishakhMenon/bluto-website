@@ -72,9 +72,17 @@ body {
   font-style: italic;
 }
 
-/* Instrument Serif — feature titles */
+/* Maghfirea — feature titles */
+@font-face {
+  font-family: 'Maghfirea';
+  src: url('/fonts/Maghfirea.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 .instrument-serif {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: 'Maghfirea', Georgia, serif;
 }
 
 /* Feature tag pills — gradient border */
