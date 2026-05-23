@@ -94,7 +94,7 @@ const utilities = [
     title: "Workouts",
     description:
       "Plan your workouts, log your sets, and track your PRs. Browse 500+ exercises and get AI-generated weekly recaps that show what's working.",
-    gradient: "from-green-200 to-emerald-200",
+    image: "/images/modules/Workouts Screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M6.5 6.5h-3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h3" />
@@ -110,7 +110,7 @@ const utilities = [
     title: "Tasks",
     description:
       "Organize your day with priorities, categories, and voice input. Get gentle nudges to stay on track and weekly recaps of what you got done.",
-    gradient: "from-sky-200 to-cyan-200",
+    image: "/images/modules/Task List screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 11l3 3L22 4" />
@@ -123,7 +123,7 @@ const utilities = [
     title: "Subscriptions",
     description:
       "See every recurring charge in one place. Know exactly where your money goes before the next billing cycle hits.",
-    gradient: "from-teal-200 to-emerald-200",
+    image: "/images/modules/Subscription Screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
@@ -136,7 +136,7 @@ const utilities = [
     title: "Shopping Lists",
     description:
       "Build your shopping list, share it with family, and check off items together in real time.",
-    gradient: "from-amber-200 to-orange-200",
+    image: "/images/modules/Shopping List Screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="8" cy="21" r="1" />
@@ -150,7 +150,7 @@ const utilities = [
     title: "Bookmarks",
     description:
       "We all save links we never read. Bluto sends you daily reminders so you actually get back to them.",
-    gradient: "from-rose-200 to-pink-200",
+    image: "/images/modules/Bookmarks screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
@@ -162,7 +162,7 @@ const utilities = [
     title: "Notes",
     description:
       "Rich text, folders, and voice notes. Capture ideas on the go and find them when you need them.",
-    gradient: "from-purple-200 to-violet-200",
+    image: "/images/modules/Notes-screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
@@ -247,12 +247,12 @@ function UtilityCard({
       <div className="relative aspect-[1/1] bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100 flex items-center justify-center overflow-hidden rounded-t-2xl">
         {!imgError ? (
           <Image
-            src={`/images/modules/${item.id}.png`}
+            src={item.image}
             alt={item.title}
             fill
             className="object-cover"
             onError={() => setImgError(true)}
-            sizes="(max-width: 768px) 50vw, 33vw"
+            sizes="(max-width: 768px) 280px, 33vw"
           />
         ) : (
           <div className="w-14 h-14 rounded-xl bg-white/50 flex items-center justify-center text-foreground/30">
@@ -428,9 +428,21 @@ export default function ModuleShowcase() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+        {/* Desktop: 3-col grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-5">
           {utilities.map((mod, i) => (
             <UtilityCard key={mod.id} item={mod} index={i} />
+          ))}
+        </div>
+
+        {/* Mobile: horizontal scroll */}
+        <div
+          className="md:hidden no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4"
+        >
+          {utilities.map((mod, i) => (
+            <div key={mod.id} className="flex-shrink-0 w-[280px] snap-start">
+              <UtilityCard item={mod} index={i} />
+            </div>
           ))}
         </div>
       </div>
