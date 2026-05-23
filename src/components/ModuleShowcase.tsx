@@ -242,17 +242,17 @@ function UtilityCard({
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
       whileHover={{ y: -4, boxShadow: "0 8px 30px rgba(0,0,0,0.06)" }}
-      className="rounded-2xl border border-card-border bg-white overflow-hidden transition-shadow"
+      className="rounded-2xl border border-card-border bg-white overflow-hidden transition-shadow w-full"
     >
-      <div className="relative aspect-[1/1] bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100 flex items-center justify-center overflow-hidden rounded-t-2xl">
+      <div className="relative aspect-[3/2] bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100 flex items-center justify-center overflow-hidden rounded-t-2xl">
         {!imgError ? (
           <Image
             src={item.image}
             alt={item.title}
             fill
-            className="object-cover"
+            className="object-contain"
             onError={() => setImgError(true)}
-            sizes="(max-width: 768px) 280px, 33vw"
+            sizes="(max-width: 768px) 340px, 420px"
           />
         ) : (
           <div className="w-14 h-14 rounded-xl bg-white/50 flex items-center justify-center text-foreground/30">
@@ -428,19 +428,11 @@ export default function ModuleShowcase() {
           </p>
         </motion.div>
 
-        {/* Desktop: 3-col grid */}
-        <div className="hidden md:grid md:grid-cols-3 gap-5">
-          {utilities.map((mod, i) => (
-            <UtilityCard key={mod.id} item={mod} index={i} />
-          ))}
-        </div>
-
-        {/* Mobile: horizontal scroll */}
         <div
-          className="md:hidden no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4"
+          className="no-scrollbar flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
         >
           {utilities.map((mod, i) => (
-            <div key={mod.id} className="flex-shrink-0 w-[280px] snap-start">
+            <div key={mod.id} className="flex-shrink-0 w-[300px] md:w-[380px] lg:w-[420px] snap-start">
               <UtilityCard item={mod} index={i} />
             </div>
           ))}
