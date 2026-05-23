@@ -196,7 +196,7 @@ export default function Features() {
         </motion.div>
 
         {/* Desktop detail card */}
-        <div className="hidden md:block mt-0 rounded-2xl overflow-hidden border border-card-border bg-cream">
+        <div className="hidden md:block mt-0 rounded-2xl overflow-hidden border border-card-border bg-white">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
             {/* Detail text */}
             <div className="p-10 lg:p-14 flex flex-col justify-center">
@@ -210,13 +210,10 @@ export default function Features() {
                 >
                   <div className="flex items-center gap-3 mb-5">
                     <span className="text-foreground">{features[active].icon}</span>
-                    <p className="text-xs font-medium tracking-widest uppercase text-muted">
+                    <h3 className="instrument-serif text-3xl lg:text-4xl text-foreground leading-snug">
                       {features[active].title}
-                    </p>
+                    </h3>
                   </div>
-                  <h3 className="instrument-serif text-3xl lg:text-4xl text-foreground mb-4 leading-snug">
-                    {features[active].title}
-                  </h3>
                   <p className="text-muted text-sm lg:text-base leading-relaxed mb-6">
                     {features[active].detail}
                   </p>

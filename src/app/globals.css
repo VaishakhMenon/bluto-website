@@ -81,7 +81,7 @@ body {
 .tag-pill {
   background: linear-gradient(#fff, #fff) padding-box,
               linear-gradient(to right, #76C38F, #60CF8C 48%, #A7C12C) border-box;
-  border: 1.5px solid transparent;
+  border: 1px solid transparent;
   color: #3A9C75;
 }
 
