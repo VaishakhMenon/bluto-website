@@ -137,7 +137,7 @@ export default function Features() {
                         {feature.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="text-xs px-3 py-1 rounded-full bg-cream text-muted border border-card-border"
+                            className="text-xs font-medium px-3 py-1 rounded-full tag-pill"
                           >
                             {tag}
                           </span>
@@ -226,7 +226,7 @@ export default function Features() {
                     {features[active].tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs px-3 py-1.5 rounded-full bg-background text-muted border border-card-border"
+                        className="text-xs font-medium px-3 py-1.5 rounded-full tag-pill"
                       >
                         {tag}
                       </span>
