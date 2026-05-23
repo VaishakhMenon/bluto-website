@@ -244,13 +244,13 @@ function UtilityCard({
       whileHover={{ y: -4, boxShadow: "0 8px 30px rgba(0,0,0,0.06)" }}
       className="rounded-2xl border border-card-border bg-white overflow-hidden transition-shadow w-full"
     >
-      <div className="relative aspect-[3/2] bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100 flex items-center justify-center overflow-hidden rounded-t-2xl">
+      <div className="relative aspect-[3/2] flex items-center justify-center overflow-hidden rounded-t-2xl">
         {!imgError ? (
           <Image
             src={item.image}
             alt={item.title}
             fill
-            className="object-contain"
+            className="object-cover"
             onError={() => setImgError(true)}
             sizes="(max-width: 768px) 340px, 420px"
           />
