@@ -193,7 +193,7 @@ function PersonalityCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[calc(33.333%-14px)] snap-start rounded-2xl border border-card-border bg-white overflow-hidden group h-full flex flex-col"
+      className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[calc(33.333%-14px)] snap-start rounded-2xl border border-card-border bg-white overflow-hidden group min-h-[400px] md:min-h-[460px] flex flex-col"
     >
       <div
         className={`h-[220px] md:h-[260px] bg-gradient-to-br ${item.gradient} flex items-center justify-center relative overflow-hidden flex-shrink-0`}
