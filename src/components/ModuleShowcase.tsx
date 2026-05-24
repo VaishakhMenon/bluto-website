@@ -12,6 +12,7 @@ const personalities = [
     title: "Casual Talk",
     description:
       "Your everyday AI companion. Share what's on your mind, think out loud, or just have a conversation that actually listens.",
+    image: "/images/modules/Casual-talk-screenshot.png",
     gradient: "from-amber-100 via-orange-50 to-yellow-100",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -24,6 +25,7 @@ const personalities = [
     title: "Rant",
     description:
       "Bad day? Let it out. Bluto won't judge, won't interrupt, and won't tell you to calm down.",
+    image: "/images/modules/Rant-screenshot.png",
     gradient: "from-red-100 via-rose-50 to-orange-100",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -36,6 +38,7 @@ const personalities = [
     title: "Hype Buddy",
     description:
       "Need a push? Your personal motivator that celebrates your wins and keeps you going when things get tough.",
+    image: "/images/modules/Hype-Buddy-screenshot.png",
     gradient: "from-yellow-100 via-amber-50 to-orange-50",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,6 +51,7 @@ const personalities = [
     title: "Gym Buddy",
     description:
       "Get workout tips, form checks, and exercise suggestions. Like having a gym partner in your pocket.",
+    image: "/images/modules/Gym-Buddy-screenshot.png",
     gradient: "from-green-100 via-emerald-50 to-teal-100",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -64,6 +68,7 @@ const personalities = [
     title: "Nutritionist",
     description:
       "Ask about meals, ingredients, or what you're eating. Get simple breakdowns without the jargon.",
+    image: "/images/modules/Nutritionist-screenshot.png",
     gradient: "from-lime-100 via-green-50 to-emerald-100",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -77,6 +82,7 @@ const personalities = [
     title: "Astrologer",
     description:
       "Check what your stars say. Daily horoscopes, birth chart insights, and cosmic curiosity — no promises, just fun.",
+    image: "/images/modules/Astro-Universe-screenshot.png",
     gradient: "from-violet-100 via-purple-50 to-indigo-100",
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -200,7 +206,7 @@ function PersonalityCard({
       >
         {!imgError ? (
           <Image
-            src={`/images/personalities/${item.id}.png`}
+            src={item.image}
             alt={item.title}
             fill
             className="object-cover"
