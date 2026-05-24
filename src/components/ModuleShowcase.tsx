@@ -199,11 +199,11 @@ function PersonalityCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[calc(33.333%-14px)] snap-start rounded-2xl border border-card-border bg-white overflow-hidden group min-h-[400px] md:min-h-[460px] flex flex-col"
+      className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[calc(33.333%-14px)] snap-start rounded-2xl border border-card-border bg-white overflow-hidden group min-h-[480px] md:min-h-[560px] flex flex-col"
     >
       <div className="p-3 md:p-4 flex-shrink-0">
         <div
-          className="h-[200px] md:h-[240px] rounded-xl relative overflow-hidden flex items-center justify-center"
+          className="h-[280px] md:h-[340px] rounded-xl relative overflow-hidden flex items-center justify-center"
         >
         {!imgError ? (
           <Image
