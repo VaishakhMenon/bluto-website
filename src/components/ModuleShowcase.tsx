@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const personalities = [
   {
     id: "talk",
-    title: "Talk",
+    title: "Casual Talk",
     description:
       "Your everyday AI companion. Share what's on your mind, think out loud, or just have a conversation that actually listens.",
     gradient: "from-amber-100 via-orange-50 to-yellow-100",
@@ -193,10 +193,10 @@ function PersonalityCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[calc(33.333%-14px)] snap-start rounded-2xl border border-card-border bg-white overflow-hidden group"
+      className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[calc(33.333%-14px)] snap-start rounded-2xl border border-card-border bg-white overflow-hidden group h-full flex flex-col"
     >
       <div
-        className={`h-[220px] md:h-[260px] bg-gradient-to-br ${item.gradient} flex items-center justify-center relative overflow-hidden`}
+        className={`h-[220px] md:h-[260px] bg-gradient-to-br ${item.gradient} flex items-center justify-center relative overflow-hidden flex-shrink-0`}
       >
         {!imgError ? (
           <Image
@@ -214,7 +214,7 @@ function PersonalityCard({
         )}
       </div>
 
-      <div className="p-5 md:p-6">
+      <div className="p-5 md:p-6 flex-1">
         <h3 className="text-lg font-semibold text-foreground mb-2">
           {item.title}
         </h3>
@@ -390,7 +390,7 @@ export default function ModuleShowcase() {
           {/* Scrollable track */}
           <div
             ref={scrollRef}
-            className="no-scrollbar flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
+            className="no-scrollbar flex items-stretch gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
           >
             {personalities.map((p, i) => (
               <PersonalityCard key={p.id} item={p} index={i} />
