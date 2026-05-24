@@ -201,15 +201,16 @@ function PersonalityCard({
       transition={{ duration: 0.4, delay: index * 0.08 }}
       className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[calc(33.333%-14px)] snap-start rounded-2xl border border-card-border bg-white overflow-hidden group min-h-[400px] md:min-h-[460px] flex flex-col"
     >
-      <div
-        className={`h-[220px] md:h-[260px] bg-gradient-to-br ${item.gradient} flex items-center justify-center relative overflow-hidden flex-shrink-0`}
-      >
+      <div className="p-3 md:p-4 flex-shrink-0">
+        <div
+          className="h-[200px] md:h-[240px] rounded-xl relative overflow-hidden flex items-center justify-center"
+        >
         {!imgError ? (
           <Image
             src={item.image}
             alt={item.title}
             fill
-            className="object-cover"
+            className="object-contain"
             onError={() => setImgError(true)}
             sizes="(max-width: 768px) 280px, 360px"
           />
@@ -218,9 +219,10 @@ function PersonalityCard({
             {item.icon}
           </div>
         )}
+        </div>
       </div>
 
-      <div className="p-5 md:p-6 flex-1">
+      <div className="px-5 pb-5 md:px-6 md:pb-6 pt-1 flex-1">
         <h3 className="text-lg font-semibold text-foreground mb-2">
           {item.title}
         </h3>
@@ -250,24 +252,26 @@ function UtilityCard({
       whileHover={{ y: -4, boxShadow: "0 8px 30px rgba(0,0,0,0.06)" }}
       className="rounded-2xl border border-card-border bg-white overflow-hidden transition-shadow w-full min-h-[420px] md:min-h-[480px] flex flex-col"
     >
-      <div className="relative aspect-[3/2] flex items-center justify-center overflow-hidden rounded-t-2xl flex-shrink-0">
-        {!imgError ? (
-          <Image
-            src={item.image}
-            alt={item.title}
-            fill
-            className="object-cover"
-            onError={() => setImgError(true)}
-            sizes="(max-width: 768px) 340px, 420px"
-          />
-        ) : (
-          <div className="w-14 h-14 rounded-xl bg-white/50 flex items-center justify-center text-foreground/30">
-            {item.icon}
-          </div>
-        )}
+      <div className="p-3 md:p-4 flex-shrink-0">
+        <div className="relative aspect-[3/2] flex items-center justify-center overflow-hidden rounded-xl">
+          {!imgError ? (
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              className="object-contain"
+              onError={() => setImgError(true)}
+              sizes="(max-width: 768px) 340px, 420px"
+            />
+          ) : (
+            <div className="w-14 h-14 rounded-xl bg-white/50 flex items-center justify-center text-foreground/30">
+              {item.icon}
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="p-5 md:p-6 flex-1">
+      <div className="px-5 pb-5 md:px-6 md:pb-6 pt-1 flex-1">
         <h3 className="instrument-serif text-xl md:text-2xl text-foreground mb-2">
           {item.title}
         </h3>
