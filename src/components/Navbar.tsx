@@ -56,6 +56,12 @@ export default function Navbar() {
           >
             How it works
           </a>
+          <Link
+            href="/pricing"
+            className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+          >
+            Pricing
+          </Link>
           <a
             href="#download"
             className="text-sm font-medium px-6 py-2.5 rounded-full bg-foreground text-background hover:bg-accent-hover transition-colors"
@@ -97,6 +103,9 @@ export default function Navbar() {
               <a href="#how-it-works" onClick={() => setMobileOpen(false)} className="text-sm font-medium text-foreground">
                 How it works
               </a>
+              <Link href="/pricing" onClick={() => setMobileOpen(false)} className="text-sm font-medium text-foreground">
+                Pricing
+              </Link>
               <a
                 href="#download"
                 onClick={() => setMobileOpen(false)}

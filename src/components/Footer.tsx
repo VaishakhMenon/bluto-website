@@ -10,6 +10,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted">
             <a href="#features" className="hover:text-foreground transition-colors">Features</a>
             <a href="#how-it-works" className="hover:text-foreground transition-colors">How it works</a>
+            <Link href="/pricing" className="hover:text-foreground transition-colors">Pricing</Link>
             <a href="#download" className="hover:text-foreground transition-colors">Download</a>
           </div>
 
