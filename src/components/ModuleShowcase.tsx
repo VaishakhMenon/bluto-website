@@ -242,9 +242,9 @@ function UtilityCard({
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
       whileHover={{ y: -4, boxShadow: "0 8px 30px rgba(0,0,0,0.06)" }}
-      className="rounded-2xl border border-card-border bg-white overflow-hidden transition-shadow w-full"
+      className="rounded-2xl border border-card-border bg-white overflow-hidden transition-shadow w-full min-h-[420px] md:min-h-[480px] flex flex-col"
     >
-      <div className="relative aspect-[3/2] flex items-center justify-center overflow-hidden rounded-t-2xl">
+      <div className="relative aspect-[3/2] flex items-center justify-center overflow-hidden rounded-t-2xl flex-shrink-0">
         {!imgError ? (
           <Image
             src={item.image}
@@ -261,7 +261,7 @@ function UtilityCard({
         )}
       </div>
 
-      <div className="p-5 md:p-6">
+      <div className="p-5 md:p-6 flex-1">
         <h3 className="instrument-serif text-xl md:text-2xl text-foreground mb-2">
           {item.title}
         </h3>
