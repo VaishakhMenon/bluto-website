@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,38 +11,89 @@ const MIN_DOLLARS = 2;
 const MAX_DOLLARS = 100;
 
 const creditCosts = [
-  { feature: "Chat message", cost: "3-5", icon: "💬" },
-  { feature: "Voice input", cost: "2-3", icon: "🎙" },
-  { feature: "Voice reply (TTS)", cost: "3", icon: "🔊" },
-  { feature: "AI workout features", cost: "3-5", icon: "💪" },
-  { feature: "Daily intelligence", cost: "FREE", icon: "✨", free: true },
-  { feature: "Signup bonus", cost: "200 free", icon: "🎁", free: true },
+  { feature: "Chat message", cost: "3-5", icon: "\u{1F4AC}" },
+  { feature: "Voice input", cost: "2-3", icon: "\u{1F399}" },
+  { feature: "Voice reply (TTS)", cost: "3", icon: "\u{1F50A}" },
+  { feature: "AI workout features", cost: "3-5", icon: "\u{1F4AA}" },
+  { feature: "Daily intelligence", cost: "FREE", icon: "\u2728", free: true },
+  { feature: "Signup bonus", cost: "200 free", icon: "\u{1F381}", free: true },
 ];
+
+interface UserInfo {
+  email: string;
+  credits: number;
+}
 
 export default function PricingPage() {
   const [amount, setAmount] = useState(5);
-  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [token, setToken] = useState<string | null>(null);
+  const [user, setUser] = useState<UserInfo | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
 
   const credits = amount * CREDITS_PER_DOLLAR;
 
-  const handleTopUp = async () => {
-    setError("");
-
-    if (!email || !email.includes("@")) {
-      setError("Please enter a valid email address.");
-      return;
+  // Read token from URL hash on mount
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const params = new URLSearchParams(hash.substring(1));
+      const t = params.get("token");
+      if (t) {
+        setToken(t);
+        // Clean token from URL bar (security)
+        window.history.replaceState(null, "", window.location.pathname);
+      }
     }
+    setAuthLoading(false);
+  }, []);
 
+  // Fetch user profile + balance when token is available
+  useEffect(() => {
+    if (!token) return;
+
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    };
+
+    Promise.all([
+      fetch(`${BACKEND_URL}/v1/user/profile`, { headers }),
+      fetch(`${BACKEND_URL}/v1/payments/plans`, { headers }),
+    ])
+      .then(async ([profileRes, plansRes]) => {
+        if (!profileRes.ok || !plansRes.ok) {
+          setToken(null);
+          return;
+        }
+        const profileData = await profileRes.json();
+        const plansData = await plansRes.json();
+        setUser({
+          email: profileData.profile?.email || "",
+          credits: plansData.balance?.credits || 0,
+        });
+      })
+      .catch(() => {
+        setToken(null);
+      });
+  }, [token]);
+
+  const handleTopUp = async () => {
+    if (!token) return;
+    setError("");
     setLoading(true);
+
     try {
-      const res = await fetch(`${BACKEND_URL}/v1/payments/web-checkout`, {
+      const res = await fetch(`${BACKEND_URL}/v1/payments/checkout`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
-          email: email.trim().toLowerCase(),
           amount_cents: amount * 100,
+          return_url: "https://bluto.co/pricing/success",
         }),
       });
 
@@ -62,6 +113,8 @@ export default function PricingPage() {
       setLoading(false);
     }
   };
+
+  const isAuthenticated = token && user;
 
   return (
     <>
@@ -103,6 +156,37 @@ export default function PricingPage() {
               <h2 className="instrument-serif text-2xl md:text-3xl text-center mb-8">
                 Top up your credits
               </h2>
+
+              {/* Authenticated user info */}
+              {isAuthenticated && (
+                <div className="mb-6 px-4 py-3 rounded-xl bg-cream border border-card-border text-center">
+                  <p className="text-sm text-muted">
+                    Signed in as{" "}
+                    <span className="font-medium text-foreground">
+                      {user.email}
+                    </span>
+                  </p>
+                  <p className="text-sm text-muted mt-1">
+                    Current balance:{" "}
+                    <span className="font-semibold text-foreground">
+                      {user.credits.toLocaleString()} credits
+                    </span>
+                  </p>
+                </div>
+              )}
+
+              {/* Not authenticated */}
+              {!authLoading && !isAuthenticated && (
+                <div className="mb-6 px-4 py-4 rounded-xl bg-cream border border-card-border text-center">
+                  <p className="text-sm text-foreground font-medium mb-1">
+                    Sign in to top up
+                  </p>
+                  <p className="text-xs text-muted">
+                    Open the Bluto app, go to Settings &gt; Plans &amp; Credits,
+                    and tap &quot;Visit bluto.co&quot; to get started.
+                  </p>
+                </div>
+              )}
 
               {/* Amount display */}
               <div className="text-center mb-6">
@@ -164,30 +248,6 @@ export default function PricingPage() {
                 ))}
               </div>
 
-              {/* Email input */}
-              <div className="mb-6">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-foreground mb-2"
-                >
-                  Your Bluto account email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    if (error) setError("");
-                  }}
-                  placeholder="you@example.com"
-                  className="w-full px-4 py-3 rounded-xl border border-card-border bg-white text-foreground placeholder:text-muted/50 outline-none focus:border-foreground/30 transition-colors"
-                />
-                <p className="text-xs text-muted mt-1.5">
-                  Use the same email you signed up with in the app.
-                </p>
-              </div>
-
               {/* Error */}
               {error && (
                 <div className="mb-4 px-4 py-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
@@ -198,7 +258,7 @@ export default function PricingPage() {
               {/* CTA */}
               <button
                 onClick={handleTopUp}
-                disabled={loading}
+                disabled={loading || !isAuthenticated}
                 className="w-full py-3.5 rounded-full bg-foreground text-background font-semibold text-base hover:bg-accent-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? "Redirecting..." : `Top up $${amount}`}
