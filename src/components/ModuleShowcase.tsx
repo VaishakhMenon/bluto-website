@@ -324,7 +324,7 @@ function ArrowButton({
 
 // ─── Main Component ─────────────────────────────────────────────────
 
-export default function ModuleShowcase() {
+function useCarouselScroll() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -351,11 +351,18 @@ export default function ModuleShowcase() {
   const scroll = (dir: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    const card = el.querySelector("[data-card]") as HTMLElement;
-    if (!card) return;
-    const amount = card.offsetWidth + 20;
+    const firstChild = el.firstElementChild as HTMLElement;
+    if (!firstChild) return;
+    const amount = firstChild.offsetWidth + 20;
     el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
   };
+
+  return { scrollRef, canScrollLeft, canScrollRight, scroll };
+}
+
+export default function ModuleShowcase() {
+  const ai = useCarouselScroll();
+  const tools = useCarouselScroll();
 
   return (
     <section id="modules" className="relative py-24 bg-background">
@@ -399,7 +406,7 @@ export default function ModuleShowcase() {
         <div className="relative max-w-6xl mx-auto px-6">
           {/* Scrollable track */}
           <div
-            ref={scrollRef}
+            ref={ai.scrollRef}
             className="no-scrollbar flex items-stretch gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
           >
             {personalities.map((p, i) => (
@@ -409,13 +416,13 @@ export default function ModuleShowcase() {
 
           {/* Navigation arrows */}
           <AnimatePresence>
-            {canScrollLeft && (
-              <ArrowButton key="left" direction="left" onClick={() => scroll("left")} />
+            {ai.canScrollLeft && (
+              <ArrowButton key="left" direction="left" onClick={() => ai.scroll("left")} />
             )}
           </AnimatePresence>
           <AnimatePresence>
-            {canScrollRight && (
-              <ArrowButton key="right" direction="right" onClick={() => scroll("right")} />
+            {ai.canScrollRight && (
+              <ArrowButton key="right" direction="right" onClick={() => ai.scroll("right")} />
             )}
           </AnimatePresence>
         </div>
@@ -438,14 +445,29 @@ export default function ModuleShowcase() {
           </p>
         </motion.div>
 
-        <div
-          className="no-scrollbar flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
-        >
-          {utilities.map((mod, i) => (
-            <div key={mod.id} className="flex-shrink-0 w-[300px] md:w-[380px] lg:w-[420px] snap-start">
-              <UtilityCard item={mod} index={i} />
-            </div>
-          ))}
+        <div className="relative">
+          <div
+            ref={tools.scrollRef}
+            className="no-scrollbar flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
+          >
+            {utilities.map((mod, i) => (
+              <div key={mod.id} className="flex-shrink-0 w-[300px] md:w-[380px] lg:w-[420px] snap-start">
+                <UtilityCard item={mod} index={i} />
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation arrows */}
+          <AnimatePresence>
+            {tools.canScrollLeft && (
+              <ArrowButton key="left" direction="left" onClick={() => tools.scroll("left")} />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {tools.canScrollRight && (
+              <ArrowButton key="right" direction="right" onClick={() => tools.scroll("right")} />
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </section>
