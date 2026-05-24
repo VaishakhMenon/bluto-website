@@ -223,7 +223,7 @@ function PersonalityCard({
       </div>
 
       <div className="px-5 pb-5 md:px-6 md:pb-6 pt-1 flex-1">
-        <h3 className="text-lg font-semibold text-foreground mb-2">
+        <h3 className="instrument-serif text-xl md:text-2xl text-foreground mb-2">
           {item.title}
         </h3>
         <p className="text-sm text-muted leading-relaxed">{item.description}</p>
