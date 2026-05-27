@@ -108,9 +108,9 @@ export default function Trust() {
 
             {/* Disclaimer */}
             <p className="text-[11px] text-white/40 text-center mt-10 max-w-xl mx-auto leading-relaxed">
-              Bluto is an AI companion for productivity, wellness tracking, and everyday conversation.
+              Bluto is an AI companion for productivity, lifestyle tracking, and everyday conversation.
               It is not a licensed professional and should not replace qualified medical, nutritional,
-              therapeutic, financial, or legal advice.
+              financial, or legal advice.
             </p>
           </div>
         </motion.div>

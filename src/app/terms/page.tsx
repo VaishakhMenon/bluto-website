@@ -53,8 +53,8 @@ export default function TermsOfService() {
             </div>
             <ul className="list-disc list-inside space-y-2 text-muted">
               <li>AI responses are for informational and entertainment purposes only and should not be considered professional advice.</li>
-              <li>Bluto is <strong className="text-foreground">not</strong> a substitute for professional medical, nutritional, mental health, therapeutic, financial, or legal advice.</li>
-              <li>You should always consult qualified professionals for medical, dietary, mental health, or other specialized guidance.</li>
+              <li>Bluto is <strong className="text-foreground">not</strong> a substitute for professional medical, nutritional, financial, or legal advice.</li>
+              <li>You should always consult qualified professionals for medical, dietary, or other specialized guidance.</li>
               <li>AI-generated content may occasionally contain inaccuracies. You are responsible for verifying any information before acting on it.</li>
               <li>Astrology-related features are provided for entertainment purposes only.</li>
             </ul>
