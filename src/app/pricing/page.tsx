@@ -93,7 +93,9 @@ export default function PricingPage() {
         },
         body: JSON.stringify({
           amount_cents: amount * 100,
-          return_url: "https://bluto.co/pricing/success",
+          // ?from=app tells the success page to deeplink back into the Bluto app
+          // instead of leaving the user stranded on bluto.co.
+          return_url: "https://bluto.co/pricing/success?from=app",
         }),
       });
 

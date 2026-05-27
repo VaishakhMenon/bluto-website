@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ReturnToApp from "./ReturnToApp";
 
 export const metadata: Metadata = {
   title: "Payment Cancelled | Bluto",
@@ -40,12 +41,15 @@ export default function PricingCancelPage() {
               are ready.
             </p>
 
-            <Link
-              href="/pricing"
-              className="inline-block px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent-hover transition-colors"
-            >
-              Try again
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/pricing"
+                className="px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent-hover transition-colors"
+              >
+                Try again
+              </Link>
+              <ReturnToApp />
+            </div>
           </div>
         </section>
       </main>

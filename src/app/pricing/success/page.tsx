@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ReturnToApp from "./ReturnToApp";
 
 export const metadata: Metadata = {
   title: "Credits Added | Bluto",
@@ -46,12 +47,7 @@ export default function PricingSuccessPage() {
               >
                 Top up more
               </Link>
-              <Link
-                href="/"
-                className="px-6 py-3 rounded-full bg-foreground text-background text-sm font-medium hover:bg-accent-hover transition-colors"
-              >
-                Back to Bluto
-              </Link>
+              <ReturnToApp />
             </div>
           </div>
         </section>
