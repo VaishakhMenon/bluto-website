@@ -29,22 +29,29 @@ export default function PricingPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [token, setToken] = useState<string | null>(null);
+  const [deeplink, setDeeplink] = useState<string | null>(null);
   const [user, setUser] = useState<UserInfo | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
 
   const credits = amount * CREDITS_PER_DOLLAR;
 
-  // Read token from URL hash on mount
+  // Read token (and optional deeplink) from URL hash on mount
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
       const params = new URLSearchParams(hash.substring(1));
       const t = params.get("token");
+      const dl = params.get("deeplink");
       if (t) {
         setToken(t);
-        // Clean token from URL bar (security)
-        window.history.replaceState(null, "", window.location.pathname);
       }
+      // Only honour deeplinks that target our own URL schemes — prevents
+      // the success page from redirecting to an arbitrary protocol.
+      if (dl && /^(bluto:|exp:|exp\+bluto:)/i.test(dl)) {
+        setDeeplink(dl);
+      }
+      // Clean hash from URL bar (security: do not leak token in browser history)
+      window.history.replaceState(null, "", window.location.pathname);
     }
     setAuthLoading(false);
   }, []);
@@ -93,9 +100,13 @@ export default function PricingPage() {
         },
         body: JSON.stringify({
           amount_cents: amount * 100,
-          // ?from=app tells the success page to deeplink back into the Bluto app
-          // instead of leaving the user stranded on bluto.co.
-          return_url: "https://bluto.co/pricing/success?from=app",
+          // ?from=app tells the success page to deeplink back into the Bluto app.
+          // ?deeplink=<encoded URL> lets the app pass an environment-specific
+          // scheme (exp:// in Expo Go, bluto:// in standalone). The success page
+          // re-validates the prefix before using it.
+          return_url: deeplink
+            ? `https://bluto.co/pricing/success?from=app&deeplink=${encodeURIComponent(deeplink)}`
+            : "https://bluto.co/pricing/success?from=app",
         }),
       });
 
