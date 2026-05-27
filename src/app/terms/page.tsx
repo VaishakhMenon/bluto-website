@@ -21,7 +21,7 @@ export default function TermsOfService() {
 
       <article className="max-w-3xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-2">Terms of Service</h1>
-        <p className="text-sm text-muted mb-12">Last updated: April 28, 2026</p>
+        <p className="text-sm text-muted mb-12">Last updated: May 27, 2026</p>
 
         <div className="prose-custom space-y-8">
           <p className="text-muted leading-relaxed">
@@ -80,56 +80,99 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">6. Intellectual Property</h2>
+            <h2 className="text-xl font-semibold mb-3">6. Refund Policy</h2>
+            <p className="text-muted leading-relaxed mb-3">
+              All Bluto credit purchases are final and non-refundable. Once a payment is successfully processed, the purchase is not eligible for refund, exchange, or cash equivalent, regardless of whether the credits are used.
+            </p>
+            <p className="text-muted leading-relaxed mb-3">Limited exceptions:</p>
+            <ul className="list-disc list-inside space-y-2 text-muted mb-3">
+              <li><strong className="text-foreground">Billing errors:</strong> If you believe you have been charged in error (for example, a duplicate charge, or a successful charge with no credits visible on your account), contact{" "}
+                <a href="mailto:support@bluto.co" className="text-accent hover:text-accent-light transition-colors">support@bluto.co</a>{" "}
+                within 14 days of the transaction with your transaction ID. We will investigate and, where an error on our side is confirmed, resolve it at our discretion (typically by adding the missing credits to your account).</li>
+              <li><strong className="text-foreground">Unauthorized transactions:</strong> If your payment method was used without your authorization, notify your bank or card issuer immediately and write to{" "}
+                <a href="mailto:support@bluto.co" className="text-accent hover:text-accent-light transition-colors">support@bluto.co</a>. We cooperate with payment networks on disputes and fraud investigations.</li>
+              <li><strong className="text-foreground">Statutory rights:</strong> Nothing in this policy limits any non-waivable rights you have under applicable consumer protection law.</li>
+            </ul>
+            <p className="text-muted leading-relaxed">Refund requests outside these exceptions will not be honored.</p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">7. Cancellation Policy</h2>
+            <p className="text-muted leading-relaxed mb-3">
+              Bluto credit top-ups are one-time purchases. There are no recurring subscriptions to cancel today.
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-muted">
+              <li>You may stop using Bluto at any time without notice or penalty.</li>
+              <li>You may delete your account at any time from in-app Settings. Account deletion removes your profile, conversations, and any unused credits. Unused credits are forfeited on account deletion and are not refundable.</li>
+              <li>If we introduce subscription plans in future, cancellation terms for those plans will be disclosed at the time of purchase and added to this section.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">8. Delivery of Services</h2>
+            <p className="text-muted leading-relaxed mb-3">
+              Bluto is a fully digital service. We do not sell or ship physical goods.
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-muted">
+              <li><strong className="text-foreground">Delivery method:</strong> Credits are delivered electronically to your Bluto account upon successful payment confirmation from our payment processor, typically within seconds.</li>
+              <li><strong className="text-foreground">Delivery time:</strong> If credits are not reflected in your account within 30 minutes of a successful payment, contact{" "}
+                <a href="mailto:support@bluto.co" className="text-accent hover:text-accent-light transition-colors">support@bluto.co</a>{" "}
+                with your transaction ID and we will investigate.</li>
+              <li><strong className="text-foreground">Shipping costs:</strong> None apply. Bluto has no physical product, no packaging, and no shipping address requirement.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">9. Intellectual Property</h2>
             <p className="text-muted leading-relaxed">
               The Bluto app, including its design, features, and content (excluding user-generated content), is owned by Bluto and protected by intellectual property laws. You retain ownership of your own content but grant us a license to process it as needed to provide the service.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">7. Limitation of Liability</h2>
+            <h2 className="text-xl font-semibold mb-3">10. Limitation of Liability</h2>
             <p className="text-muted leading-relaxed">
               To the fullest extent permitted by law, Bluto and its creators shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the app. This includes but is not limited to damages arising from reliance on AI-generated content, service interruptions, or data loss.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">8. Disclaimer of Warranties</h2>
+            <h2 className="text-xl font-semibold mb-3">11. Disclaimer of Warranties</h2>
             <p className="text-muted leading-relaxed">
               Bluto is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind, either express or implied. We do not guarantee that the service will be uninterrupted, error-free, or that AI responses will be accurate or suitable for any particular purpose.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">9. Account Termination</h2>
+            <h2 className="text-xl font-semibold mb-3">12. Account Termination</h2>
             <p className="text-muted leading-relaxed">
               We reserve the right to suspend or terminate your account if you violate these terms or engage in conduct that we determine to be harmful to other users or the service. You may delete your account at any time through the app settings.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">10. Indemnification</h2>
+            <h2 className="text-xl font-semibold mb-3">13. Indemnification</h2>
             <p className="text-muted leading-relaxed">
               You agree to indemnify, defend, and hold harmless Bluto, its creators, officers, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorney fees) arising out of or related to your use of the app, your violation of these terms, or your reliance on AI-generated content.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">11. Governing Law</h2>
+            <h2 className="text-xl font-semibold mb-3">14. Governing Law</h2>
             <p className="text-muted leading-relaxed">
               These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">12. Changes to Terms</h2>
+            <h2 className="text-xl font-semibold mb-3">15. Changes to Terms</h2>
             <p className="text-muted leading-relaxed">
               We may update these Terms of Service from time to time. We will notify you of material changes by posting the updated terms within the app. Continued use of the app after changes are posted constitutes acceptance of the updated terms.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold mb-3">13. Contact Us</h2>
+            <h2 className="text-xl font-semibold mb-3">16. Contact Us</h2>
             <p className="text-muted leading-relaxed">
               If you have any questions about these Terms of Service, please contact us at{" "}
               <a href="mailto:support@bluto.co" className="text-accent hover:text-accent-light transition-colors">
