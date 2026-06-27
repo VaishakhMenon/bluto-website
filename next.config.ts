@@ -14,6 +14,19 @@ const nextConfig: NextConfig = {
         source: "/.well-known/assetlinks.json",
         headers: [{ key: "Content-Type", value: "application/json" }],
       },
+      {
+        // Share-link landing pages must never be cached — they're
+        // routinely tapped from messenger in-app browsers (WhatsApp,
+        // Telegram, etc.) which ignore must-revalidate. no-store forces
+        // a fresh fetch every time, so a deploy that rotates the JS
+        // chunks is immediately visible to recipients.
+        source: "/share/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-store, must-revalidate" },
+          { key: "Pragma", value: "no-cache" },
+          { key: "Expires", value: "0" },
+        ],
+      },
     ];
   },
 };
