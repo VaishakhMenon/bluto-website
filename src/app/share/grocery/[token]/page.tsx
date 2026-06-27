@@ -50,22 +50,12 @@ export default function GroceryInvitePage({ params }: PageProps) {
       });
   }, [token]);
 
-  // On mobile devices, fire the deep link straight away. If the app is
-  // installed, it intercepts and opens; otherwise the user stays on this
-  // page and uses the App Store / Play Store buttons.
-  useEffect(() => {
-    if (!list) return;
-    if (typeof window === "undefined") return;
-    const ua = navigator.userAgent || "";
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(ua);
-    if (!isMobile) return;
-    // Tiny delay so the page first paints — otherwise iOS Safari can
-    // race and never show our landing UI at all.
-    const t = window.setTimeout(() => {
-      window.location.href = deepLink;
-    }, 400);
-    return () => window.clearTimeout(t);
-  }, [list, deepLink]);
+  // No auto-redirect — iOS Safari blocks programmatic launches of
+  // custom URL schemes (only user gestures qualify), and throws the
+  // alarming "Safari cannot open the page because the address is
+  // invalid" dialog. The Open in Bluto button below IS a user gesture
+  // and works correctly. Universal links via the .well-known files take
+  // care of installed-app interception transparently.
 
   return (
     <>
