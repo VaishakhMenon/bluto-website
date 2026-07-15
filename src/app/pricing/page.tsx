@@ -7,13 +7,13 @@ import Footer from "@/components/Footer";
 
 const BACKEND_URL = "https://ai-companion-app-production.up.railway.app";
 const CREDITS_PER_DOLLAR = 100;
-const MIN_DOLLARS = 2;
+const MIN_DOLLARS = 3;
 const MAX_DOLLARS = 100;
 
 const creditCosts = [
   { feature: "Chat message", cost: "3-5", icon: "\u{1F4AC}" },
   { feature: "Voice input", cost: "2-3", icon: "\u{1F399}" },
-  { feature: "Voice reply (TTS)", cost: "3", icon: "\u{1F50A}" },
+  { feature: "Voice reply (TTS)", cost: "4", icon: "\u{1F50A}" },
   { feature: "AI workout features", cost: "3-5", icon: "\u{1F4AA}" },
   { feature: "Daily intelligence", cost: "FREE", icon: "\u2728", free: true },
   { feature: "Signup bonus", cost: "200 free", icon: "\u{1F381}", free: true },
@@ -151,7 +151,7 @@ export default function PricingPage() {
               className="text-muted text-base md:text-lg mt-4 max-w-xl mx-auto"
             >
               No subscriptions. No tiers. Just credits you use when you want.
-              Top up any amount from $2 to $100.
+              Top up any amount from $3 to $100.
             </motion.p>
           </div>
         </section>
@@ -246,7 +246,7 @@ export default function PricingPage() {
 
               {/* Quick amounts */}
               <div className="flex gap-2 justify-center mb-8">
-                {[2, 5, 10, 25, 50].map((val) => (
+                {[3, 5, 10, 25, 50].map((val) => (
                   <button
                     key={val}
                     onClick={() => setAmount(val)}
