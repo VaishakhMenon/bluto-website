@@ -72,17 +72,12 @@ body {
   font-style: italic;
 }
 
-/* Maghfirea — feature titles */
-@font-face {
-  font-family: 'Maghfirea';
-  src: url('/fonts/Maghfirea.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
+/* Feature titles now use Gelica italic (same face as .serif-italic).
+   Kept the .instrument-serif class name so callers don't need edits —
+   only the underlying font family changed. Maghfirea deprecated. */
 .instrument-serif {
-  font-family: 'Maghfirea', Georgia, serif;
+  font-family: 'Gelica', Georgia, 'Times New Roman', serif;
+  font-style: italic;
 }
 
 /* Feature tag pills — gradient border */
