@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
 
       <article className="max-w-3xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-sm text-muted mb-12">Last updated: April 28, 2026</p>
+        <p className="text-sm text-muted mb-12">Last updated: July 20, 2026</p>
 
         <div className="prose-custom space-y-8">
           <p className="text-muted leading-relaxed">
@@ -60,15 +60,23 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 className="text-xl font-semibold mb-3">4. Third-Party Services</h2>
-            <p className="text-muted leading-relaxed mb-3">We use the following third-party services to provide our app&apos;s functionality:</p>
+            <p className="text-muted leading-relaxed mb-3">We use the following third-party services (data processors) to deliver core functionality. These providers process user data on our behalf strictly for the purposes described.</p>
             <ul className="list-disc list-inside space-y-2 text-muted">
-              <li><strong className="text-foreground">Anthropic (Claude):</strong> Powers AI conversations. Your messages are sent to Anthropic&apos;s API for processing.</li>
-              <li><strong className="text-foreground">OpenAI:</strong> Used for text embeddings to power the memory search system.</li>
-              <li><strong className="text-foreground">ElevenLabs:</strong> Provides text-to-speech voice generation for voice call features.</li>
-              <li><strong className="text-foreground">DodoPayments:</strong> Processes payments securely. We do not store your payment card details.</li>
+              <li><strong className="text-foreground">Supabase:</strong> Stores your account, conversations, notes, tasks, workouts, reminders, shopping lists, and other user content. Encryption at rest and in transit.</li>
+              <li><strong className="text-foreground">Anthropic (Claude):</strong> Powers AI chat conversations, daily intelligence briefings, and workout AI features. Your chat messages and prompt context are sent to Anthropic&apos;s API for inference.</li>
+              <li><strong className="text-foreground">OpenAI:</strong> Used for text embeddings (memory search), voice transcript parsing via GPT-4o-mini (e.g., turning a spoken workout into structured sets), and Whisper as a speech-to-text fallback.</li>
+              <li><strong className="text-foreground">Sarvam AI:</strong> Primary speech-to-text provider (Saarika and Batch APIs) and text-to-speech for select Indic voices. India-hosted infrastructure.</li>
+              <li><strong className="text-foreground">ElevenLabs:</strong> Primary text-to-speech provider for voice replies. Voice audio is generated per request and not persisted by us.</li>
+              <li><strong className="text-foreground">DodoPayments:</strong> Payment processor and merchant of record for credit top-ups on bluto.co. We do not store payment card details.</li>
+              <li><strong className="text-foreground">Autosend:</strong> Transactional email delivery (account verification, password reset, notifications you opt into).</li>
+              <li><strong className="text-foreground">PostHog:</strong> Product analytics for feature usage and improvement. On iOS, PostHog only activates if you grant App Tracking Transparency permission. You can decline or opt out anytime from Settings.</li>
+              <li><strong className="text-foreground">Sentry:</strong> Crash and performance error reporting so we can diagnose bugs.</li>
             </ul>
             <p className="text-muted leading-relaxed mt-3">
-              Each third-party service has its own privacy policy governing how they handle data. We do not control and are not responsible for the privacy practices of these third-party services. We recommend reviewing their respective policies.
+              <strong className="text-foreground">Voice data handling:</strong> Voice recordings are streamed to speech-to-text providers in-flight and are not persisted long-term on our servers. Transcripts (the text output) are retained as part of your chat history or module content.
+            </p>
+            <p className="text-muted leading-relaxed mt-3">
+              Each provider has its own privacy policy. We do not sell, license, or share your data with any of them for their own purposes. We recommend reviewing their respective policies for details on their handling.
             </p>
           </section>
 

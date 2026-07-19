@@ -21,7 +21,7 @@ export default function TermsOfService() {
 
       <article className="max-w-3xl mx-auto px-6 py-16">
         <h1 className="text-4xl font-bold mb-2">Terms of Service</h1>
-        <p className="text-sm text-muted mb-12">Last updated: May 27, 2026</p>
+        <p className="text-sm text-muted mb-12">Last updated: July 20, 2026</p>
 
         <div className="prose-custom space-y-8">
           <p className="text-muted leading-relaxed">
