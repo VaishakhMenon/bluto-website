@@ -12,12 +12,12 @@ const features = [
         <path d="M20 21a8 8 0 0 0-16 0" />
       </svg>
     ),
-    title: "AI Avatars",
+    title: "AI Crew",
     description:
-      "Not one AI — five. A friend for late-night thoughts, a coach for the gym, a guide for what to eat. Switch moods, not apps.",
+      "Not one AI — six. A friend for late-night thoughts. A workout accountability buddy. A companion who chats about your meals. Different personalities for different moments.",
     detail:
-      "Every avatar has a personality. Your gym buddy pushes you harder. Your office confidant lets you vent without judgment. Your astro guide reads the stars. Your nutrition coach knows your macros. And your casual companion? Just vibes. Each one remembers everything — switch between them and pick up right where you left off.",
-    tags: ["Casual Talk", "Office Rant", "Gym Buddy", "Astro Universe", "Nutrition Guide"],
+      "Every persona has a personality. Your gym buddy keeps you accountable. Your rant companion listens without judgment. Your astro guide reads the stars. Your nutrition companion knows what you actually eat. Your hype buddy pumps you up. And your casual companion? Just vibes. Each one remembers everything — switch between them and pick up right where you left off.",
+    tags: ["Casual Talk", "Rant", "Hype Buddy", "Gym Buddy", "Nutrition", "Astro"],
     image: "/images/features/AI-Avatars.png",
   },
   {

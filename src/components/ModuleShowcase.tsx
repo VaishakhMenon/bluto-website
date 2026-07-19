@@ -50,7 +50,7 @@ const personalities = [
     id: "gym-buddy",
     title: "Gym Buddy",
     description:
-      "Get workout tips, form checks, and exercise suggestions. Like having a gym partner in your pocket.",
+      "Get workout ideas, exercise suggestions, and accountability chatter. Like having a gym partner in your pocket.",
     image: "/images/modules/Gym-Buddy-screenshot.png",
     gradient: "from-green-100 via-emerald-50 to-teal-100",
     icon: (
