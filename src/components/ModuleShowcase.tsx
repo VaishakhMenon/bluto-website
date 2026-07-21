@@ -100,7 +100,7 @@ const utilities = [
     title: "Workouts",
     description:
       "Plan your workouts, log your sets, and track your PRs. Browse 500+ exercises and get AI-generated weekly recaps that show what's working.",
-    image: "/images/modules/Workouts Screenshot.png",
+    image: "/images/modules/Workout Screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M6.5 6.5h-3a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h3" />
@@ -116,7 +116,7 @@ const utilities = [
     title: "Tasks",
     description:
       "Organize your day with priorities, categories, and voice input. Get gentle nudges to stay on track and weekly recaps of what you got done.",
-    image: "/images/modules/Task List screenshot.png",
+    image: "/images/modules/Tasklist screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 11l3 3L22 4" />
@@ -142,7 +142,7 @@ const utilities = [
     title: "Shopping Lists",
     description:
       "Build your shopping list, share it with family, and check off items together in real time.",
-    image: "/images/modules/Shopping List Screenshot.png",
+    image: "/images/modules/Shoppinglist Screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="8" cy="21" r="1" />
@@ -168,7 +168,7 @@ const utilities = [
     title: "Notes",
     description:
       "Rich text, folders, and voice notes. Capture ideas on the go and find them when you need them.",
-    image: "/images/modules/Notes-screenshot.png",
+    image: "/images/modules/Notes screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
@@ -184,7 +184,7 @@ const utilities = [
     title: "Reminders",
     description:
       "Set reminders by voice. Bluto figures out the time and details from what you say, then pings you when it matters.",
-    image: "/images/modules/Reminders-screenshot.png",
+    image: "/images/modules/Reminder Screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
