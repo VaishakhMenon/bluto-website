@@ -78,8 +78,8 @@ const personalities = [
     ),
   },
   {
-    id: "astrologer",
-    title: "Astrologer",
+    id: "astro-universe",
+    title: "Astro Universe",
     description:
       "Check what your stars say. Daily horoscopes, birth chart insights, and cosmic curiosity — no promises, just fun.",
     image: "/images/modules/Astro-Universe-screenshot.png",
