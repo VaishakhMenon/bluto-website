@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const BACKEND_URL = "https://ai-companion-app-production.up.railway.app";
-const APP_STORE_URL = "https://apps.apple.com/app/id0000000000";
+const APP_STORE_URL = "https://apps.apple.com/app/id6792257689";
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=co.bluto.app";
 
 interface ListPreview {
