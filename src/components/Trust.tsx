@@ -43,7 +43,7 @@ const items = [
       </svg>
     ),
     title: "Pay what you want",
-    description: "No subscriptions. Top up credits from $3. 200 free credits when you sign up.",
+    description: "No subscriptions. Every pack the same rate, from $2.99. 200 free credits when you sign up.",
   },
 ];
 

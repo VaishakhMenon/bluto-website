@@ -17,9 +17,9 @@ const steps = [
   },
   {
     number: "03",
-    title: "Wake up to a plan, not a panic.",
+    title: "Nudges only when they're earned.",
     description:
-      "Every morning, a brief hits your inbox — your tasks, your streak, your schedule. During the day, smart nudges keep things moving. Nothing spammy. Everything useful.",
+      "No daily pile-up in your inbox. A weekly recap of what actually moved, and a word when a streak is about to break or a renewal is about to hit. Quiet the rest of the time, and every one of them is a switch you control.",
   },
   {
     number: "04",

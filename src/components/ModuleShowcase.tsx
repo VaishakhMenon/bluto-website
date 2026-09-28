@@ -99,10 +99,7 @@ const utilities = [
     id: "expenses",
     title: "Expenses",
     description:
-      "Photograph a receipt and Bluto reads every line, the taxes and the discounts, then files it. See where the money went, and what the same item cost you last time.",
-    // Not on disk yet. Both render paths fall back to the icon on error, so
-    // this shows the glyph until the screenshot lands rather than a broken
-    // image or a build failure.
+      "Point your camera at a receipt and it's logged — every item, sorted, no typing. Then Bluto mentions your usual coffee is up 12% since August, which is not the kind of thing you'd ever notice on your own.",
     image: "/images/modules/Expenses Screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -117,7 +114,7 @@ const utilities = [
     id: "workouts",
     title: "Workouts",
     description:
-      "Plan your workouts, log your sets, and track your PRs. Browse 500+ exercises and get AI-generated weekly recaps that show what's working.",
+      "Log a set in four taps, or just say it out loud. Browse 500+ exercises, and get a weekly recap that notices your squat went up 15kg while your bench sat still for a month.",
     image: "/images/modules/Workout Screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -133,7 +130,7 @@ const utilities = [
     id: "task-list",
     title: "Tasks",
     description:
-      "Organize your day with priorities, categories, and voice input. Get gentle nudges to stay on track and weekly recaps of what you got done.",
+      "Add one by voice while you're walking. Sort by what actually matters today. At the end of the week, see the eleven things you finished and forgot you'd done.",
     image: "/images/modules/Tasklist screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -146,7 +143,7 @@ const utilities = [
     id: "subscriptions",
     title: "Subscriptions",
     description:
-      "See every recurring charge in one place. Know exactly where your money goes before the next billing cycle hits.",
+      "Every recurring charge in one place, with the date it next bites. That annual thing you forgot signing up for in February? You'll hear about it in January, not on the statement.",
     // Capital S, matching what git tracks. An earlier "fix" here pointed at the
     // lowercase name because `ls` showed it that way: macOS is case-insensitive
     // and core.ignorecase is true, so git reported no change while still

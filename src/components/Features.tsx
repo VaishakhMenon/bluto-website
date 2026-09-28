@@ -33,7 +33,7 @@ const features = [
     description:
       "Expenses, workouts, tasks, bookmarks, subscriptions, notes, shopping lists — everything you juggle, in one place. With AI that actually reads the room.",
     detail:
-      "You don't need seven apps and a spreadsheet. Photograph a receipt and watch Bluto read the whole bill. Log your workouts and watch it spot your PRs. Save links and get reminded to actually read them. Track subscriptions before they silently drain your wallet. Share a shopping list that updates in real time. Every tool has an AI layer baked in — not bolted on — so your data actually works for you.",
+      "You don't need seven apps and a spreadsheet. Snap a receipt and watch it file itself, then hear that your usual coffee is up 12% since August. Log a set and watch Bluto spot a PR you missed. Save a link and get nudged to actually read it. Catch the subscription renewing on Tuesday before it renews on Tuesday. Every tool has an AI layer baked in, not bolted on, so the data you already have starts telling you things.",
     tags: ["Expenses", "Receipt Scan", "Bookmarks", "Workout Log", "Task List", "Subscriptions", "Notes", "Shopping List"],
     image: "/images/features/Your-Life-Organised.png",
   },
@@ -44,12 +44,12 @@ const features = [
         <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
       </svg>
     ),
-    title: "Voice & Smart Nudges",
+    title: "Nudges that earn their keep",
     description:
-      "A morning brief that sets up your day. Streak alerts that keep you honest. Gentle reminders that land at exactly the right time.",
+      "A weekly recap of what actually moved. A word when a streak is about to break or a subscription is about to renew. Silence the rest of the time.",
     detail:
-      "Open your inbox to a personalized rundown — your tasks, your streak, your schedule, all in one glance. Bluto nudges you when something slips, celebrates when you're consistent, and stays quiet when you don't need it. Push, email, your call. Productivity without the guilt trip.",
-    tags: ["Morning Briefs", "Streak Alerts", "Task Reminders", "Push Notifications", "Email Digests", "Voice"],
+      "Most apps buy your attention by spending it. Bluto stays quiet until there's something worth saying — a streak on the edge, a renewal you'd forgotten, a week worth looking back on. Talk to it out loud or type, it works either way. Push, email, or neither. Every one of them is a switch you control.",
+    tags: ["Weekly Recap", "Streak Alerts", "Renewal Alerts", "Task Reminders", "Push Notifications", "Voice"],
     image: "/images/features/Voice-Smart-Nudges.png",
   },
 ];
