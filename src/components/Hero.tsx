@@ -41,7 +41,7 @@ export default function Hero() {
             href="#download"
             className="inline-flex px-8 py-3.5 rounded-full bg-foreground text-background hover:bg-accent-hover transition-colors font-medium text-sm"
           >
-            Try it free
+            Start with 200 free credits
           </a>
         </motion.div>
       </div>
