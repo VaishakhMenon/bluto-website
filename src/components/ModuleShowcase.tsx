@@ -419,51 +419,8 @@ export default function ModuleShowcase() {
         </motion.div>
       </div>
 
-      {/* ── AI Personalities: Horizontal carousel ── */}
-      <div className="mb-24">
-        <div className="max-w-6xl mx-auto px-6 mb-8">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <h3 className="text-xl md:text-2xl font-medium text-foreground">
-              Your AI crew
-            </h3>
-            <p className="text-sm text-muted mt-1">
-              Six personalities. Zero judgment. Pick whoever fits the moment.
-            </p>
-          </motion.div>
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-6">
-          {/* Scrollable track */}
-          <div
-            ref={ai.scrollRef}
-            className="no-scrollbar flex items-stretch gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
-          >
-            {personalities.map((p, i) => (
-              <PersonalityCard key={p.id} item={p} index={i} />
-            ))}
-          </div>
-
-          {/* Navigation arrows */}
-          <AnimatePresence>
-            {ai.canScrollLeft && (
-              <ArrowButton key="left" direction="left" onClick={() => ai.scroll("left")} />
-            )}
-          </AnimatePresence>
-          <AnimatePresence>
-            {ai.canScrollRight && (
-              <ArrowButton key="right" direction="right" onClick={() => ai.scroll("right")} />
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
-
       {/* ── Utility Modules: Static grid ── */}
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6 mb-24">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -472,10 +429,10 @@ export default function ModuleShowcase() {
           className="mb-8"
         >
           <h3 className="text-xl md:text-2xl font-medium text-foreground">
-            Built-in tools
+            Your tools
           </h3>
           <p className="text-sm text-muted mt-1">
-            Everything else you need, already baked in.
+            Expenses, workouts, tasks, notes and more. The things you open the app for.
           </p>
         </motion.div>
 
@@ -500,6 +457,50 @@ export default function ModuleShowcase() {
           <AnimatePresence>
             {tools.canScrollRight && (
               <ArrowButton key="right" direction="right" onClick={() => tools.scroll("right")} />
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+
+      {/* ── AI Personalities: Horizontal carousel ── */}
+      <div>
+        <div className="max-w-6xl mx-auto px-6 mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            <h3 className="text-xl md:text-2xl font-medium text-foreground">
+              Your AI crew
+            </h3>
+            <p className="text-sm text-muted mt-1">
+              And when you'd rather talk than tap: six personalities, each one
+              remembering where you left off.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-6">
+          {/* Scrollable track */}
+          <div
+            ref={ai.scrollRef}
+            className="no-scrollbar flex items-stretch gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
+          >
+            {personalities.map((p, i) => (
+              <PersonalityCard key={p.id} item={p} index={i} />
+            ))}
+          </div>
+
+          {/* Navigation arrows */}
+          <AnimatePresence>
+            {ai.canScrollLeft && (
+              <ArrowButton key="left" direction="left" onClick={() => ai.scroll("left")} />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {ai.canScrollRight && (
+              <ArrowButton key="right" direction="right" onClick={() => ai.scroll("right")} />
             )}
           </AnimatePresence>
         </div>
