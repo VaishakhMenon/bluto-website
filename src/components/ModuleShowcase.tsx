@@ -96,6 +96,24 @@ const personalities = [
 
 const utilities = [
   {
+    id: "expenses",
+    title: "Expenses",
+    description:
+      "Photograph a receipt and Bluto reads every line, the taxes and the discounts, then files it. See where the money went, and what the same item cost you last time.",
+    // Not on disk yet. Both render paths fall back to the icon on error, so
+    // this shows the glyph until the screenshot lands rather than a broken
+    // image or a build failure.
+    image: "/images/modules/Expenses Screenshot.png",
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 3h11a1 1 0 0 1 1 1v16l-3-2-3 2-3-2-3 2V4a1 1 0 0 1 1-1Z" />
+        <path d="M8 7h6" />
+        <path d="M8 11h6" />
+        <path d="M8 15h3" />
+      </svg>
+    ),
+  },
+  {
     id: "workouts",
     title: "Workouts",
     description:
@@ -129,7 +147,7 @@ const utilities = [
     title: "Subscriptions",
     description:
       "See every recurring charge in one place. Know exactly where your money goes before the next billing cycle hits.",
-    image: "/images/modules/Subscription Screenshot.png",
+    image: "/images/modules/Subscription screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />

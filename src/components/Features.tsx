@@ -31,10 +31,10 @@ const features = [
     ),
     title: "Your life, organized",
     description:
-      "Workouts, tasks, bookmarks, subscriptions, notes, shopping lists — everything you juggle, in one place. With AI that actually reads the room.",
+      "Expenses, workouts, tasks, bookmarks, subscriptions, notes, shopping lists — everything you juggle, in one place. With AI that actually reads the room.",
     detail:
-      "You don't need seven apps and a spreadsheet. Log your workouts and watch Bluto spot your PRs. Save links and get reminded to actually read them. Track subscriptions before they silently drain your wallet. Share a shopping list that updates in real time. Every tool has an AI layer baked in — not bolted on — so your data actually works for you.",
-    tags: ["Bookmarks", "Workout Log", "Task List", "Exercise Library", "Subscriptions", "Notes", "Shopping List"],
+      "You don't need seven apps and a spreadsheet. Photograph a receipt and watch Bluto read the whole bill. Log your workouts and watch it spot your PRs. Save links and get reminded to actually read them. Track subscriptions before they silently drain your wallet. Share a shopping list that updates in real time. Every tool has an AI layer baked in — not bolted on — so your data actually works for you.",
+    tags: ["Expenses", "Receipt Scan", "Bookmarks", "Workout Log", "Task List", "Subscriptions", "Notes", "Shopping List"],
     image: "/images/features/Your-Life-Organised.png",
   },
   {
