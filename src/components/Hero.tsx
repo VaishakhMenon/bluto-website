@@ -14,8 +14,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-[1.05] text-foreground"
         >
-          The AI that actually{" "}
-          <span className="serif-italic">knows you.</span>
+          It notices what{" "}
+          <span className="serif-italic">you don&apos;t.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -25,9 +25,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-muted text-base md:text-lg max-w-xl mx-auto mt-6 leading-relaxed"
         >
-          Bluto remembers your story, tracks your goals, and helps you think
-          clearly. One companion for your workouts, meals, tasks, and the
-          moments when you just need to talk.
+          Snap a receipt, log a set, say a thought out loud. Bluto files it —
+          then mentions your coffee is up 12% since August and your squat is up
+          15kg. Six AI personalities, and the tools to back them up.
         </motion.p>
 
         {/* CTA */}
