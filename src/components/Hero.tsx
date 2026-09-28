@@ -67,11 +67,18 @@ export default function Hero() {
 
         {/* Phone overlapping — top half sits on the card, bottom half extends below */}
         <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-[25%]">
+          {/* Trimmed from Bluto-Website-Hero-Sep.png, a 1620x1620 square with
+              the phone in the middle behind transparent padding. Dropped in
+              whole, the CSS width would apply to the padding too and render the
+              phone at under half its current size. Trimmed to the phone it is
+              741x1529, an aspect of 0.485 against the old asset's 0.483, so the
+              layout is unchanged. The square original stays in the folder as
+              the source. */}
           <Image
-            src="/images/hero-device.png"
+            src="/images/hero-device-sep.png"
             alt="Bluto app on mobile"
-            width={600}
-            height={750}
+            width={741}
+            height={1529}
             className="w-[220px] md:w-[280px] lg:w-[320px] h-auto"
             priority
             quality={90}
