@@ -147,7 +147,13 @@ const utilities = [
     title: "Subscriptions",
     description:
       "See every recurring charge in one place. Know exactly where your money goes before the next billing cycle hits.",
-    image: "/images/modules/Subscription screenshot.png",
+    // Capital S, matching what git tracks. An earlier "fix" here pointed at the
+    // lowercase name because `ls` showed it that way: macOS is case-insensitive
+    // and core.ignorecase is true, so git reported no change while still
+    // holding the capitalised path. Vercel checks out what GIT has, so the
+    // lowercase reference would have 404'd in production. Verify with
+    // `git ls-files`, never with `ls`.
+    image: "/images/modules/Subscription Screenshot.png",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
